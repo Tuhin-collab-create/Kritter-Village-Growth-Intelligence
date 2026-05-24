@@ -1,7 +1,7 @@
 # Village Economic Growth Intelligence
 
-### Project Data
-[Click here to access all project files and data](https://drive.google.com/drive/folders/13ONuYcDkxm_uUg-pqVO1VoJlRZf3Gvy4?usp=drive_link)
+### Project Files & Data Access
+[Click here to access the full project files and raw data](https://drive.google.com/drive/folders/1HM8Xe8nrJPDeMFb_U2jzvusK9Y4-yf0q?usp=drive_link)
 
 
 
