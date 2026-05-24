@@ -1,5 +1,10 @@
 # Village Economic Growth Intelligence
 
+### Project Data
+[Click here to access all project files and data](https://drive.google.com/drive/folders/13ONuYcDkxm_uUg-pqVO1VoJlRZf3Gvy4?usp=drive_link)
+
+
+
 [cite_start]This repository contains the intelligence system designed to identify the top 100 villages in India exhibiting the highest economic growth over the last 5 years[cite: 16, 20].
 
 ## Project Overview
