@@ -1,0 +1,3913 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_099a21e0d317ec5dcf3f43903619735e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_099a21e0d317ec5dcf3f43903619735e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_099a21e0d317ec5dcf3f43903619735e = L.map(
+                "map_099a21e0d317ec5dcf3f43903619735e",
+                {
+                    center: [23.672997704564708, 78.98504471816486],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c2e60630e13a526c9914a08f3d3783d2 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c2e60630e13a526c9914a08f3d3783d2.addTo(map_099a21e0d317ec5dcf3f43903619735e);
+        
+    
+            var marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_bac6d0f6ffb903ec06e3352c46526ec6 = L.marker(
+                [28.76136138234532, 77.25048118689517],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_91353e6c6062a673b550674e534aad9f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fbdcf6cdfb013c49d471c3753b39822 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3c0cf9cf6b65683f697a248e5159f916 = $(`<div id="html_3c0cf9cf6b65683f697a248e5159f916" style="width: 100.0%; height: 100.0%;"><b>Village:</b> ilaichipur<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_6fbdcf6cdfb013c49d471c3753b39822.setContent(html_3c0cf9cf6b65683f697a248e5159f916);
+            
+        
+
+        marker_bac6d0f6ffb903ec06e3352c46526ec6.bindPopup(popup_6fbdcf6cdfb013c49d471c3753b39822)
+        ;
+
+        
+    
+    
+                marker_bac6d0f6ffb903ec06e3352c46526ec6.setIcon(icon_91353e6c6062a673b550674e534aad9f);
+            
+    
+            var marker_98f10a17d103f186e3e4a8e78f38ee4b = L.marker(
+                [29.02331538365373, 77.0818393108003],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_127ecc2b852a4d0637792cead8ccb919 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3485f2d96426d21c85455fcb69985b35 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3a12de8e96d0cb0728dd402d7cd414f = $(`<div id="html_e3a12de8e96d0cb0728dd402d7cd414f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> morthal khas<br><b>Sub-District:</b> sonipat<br><b>District:</b> sonipat<br><b>State:</b> haryana<br><b>Score:</b> 3.90</div>`)[0];
+                popup_3485f2d96426d21c85455fcb69985b35.setContent(html_e3a12de8e96d0cb0728dd402d7cd414f);
+            
+        
+
+        marker_98f10a17d103f186e3e4a8e78f38ee4b.bindPopup(popup_3485f2d96426d21c85455fcb69985b35)
+        ;
+
+        
+    
+    
+                marker_98f10a17d103f186e3e4a8e78f38ee4b.setIcon(icon_127ecc2b852a4d0637792cead8ccb919);
+            
+    
+            var marker_6e885902b4eee4db71e860ae62657633 = L.marker(
+                [28.679955607420563, 77.55594023796358],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_84cf52d2844c5e925679aca2aa29dc71 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0255a70f9a8e422296bb377014ecef10 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_00c952dad3a0587a919e9a59f133cc06 = $(`<div id="html_00c952dad3a0587a919e9a59f133cc06" style="width: 100.0%; height: 100.0%;"><b>Village:</b> piplehda<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_0255a70f9a8e422296bb377014ecef10.setContent(html_00c952dad3a0587a919e9a59f133cc06);
+            
+        
+
+        marker_6e885902b4eee4db71e860ae62657633.bindPopup(popup_0255a70f9a8e422296bb377014ecef10)
+        ;
+
+        
+    
+    
+                marker_6e885902b4eee4db71e860ae62657633.setIcon(icon_84cf52d2844c5e925679aca2aa29dc71);
+            
+    
+            var marker_f5b61d2e94d46d172ba0c6766bc88c33 = L.marker(
+                [28.72012624059741, 77.3749574670978],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_6fd35ee804c9b5eabc6f98260312b842 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_334b198eb730d94aa6db25f5c46799ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e981c721861955ec99a03ec1d15e1cb3 = $(`<div id="html_e981c721861955ec99a03ec1d15e1cb3" style="width: 100.0%; height: 100.0%;"><b>Village:</b> asalatpur farakh nagar<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_334b198eb730d94aa6db25f5c46799ce.setContent(html_e981c721861955ec99a03ec1d15e1cb3);
+            
+        
+
+        marker_f5b61d2e94d46d172ba0c6766bc88c33.bindPopup(popup_334b198eb730d94aa6db25f5c46799ce)
+        ;
+
+        
+    
+    
+                marker_f5b61d2e94d46d172ba0c6766bc88c33.setIcon(icon_6fd35ee804c9b5eabc6f98260312b842);
+            
+    
+            var marker_5b22d471a9024bbf5efe3ff8708f5bda = L.marker(
+                [28.676642713928526, 77.51653436381268],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_0a888c98507fccd105cd219825ad9fa7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c1e479ff91e48db88d2bbc73504bc73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aef5cb007dc63398c9c8428e6497252c = $(`<div id="html_aef5cb007dc63398c9c8428e6497252c" style="width: 100.0%; height: 100.0%;"><b>Village:</b> dasna dehat<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_7c1e479ff91e48db88d2bbc73504bc73.setContent(html_aef5cb007dc63398c9c8428e6497252c);
+            
+        
+
+        marker_5b22d471a9024bbf5efe3ff8708f5bda.bindPopup(popup_7c1e479ff91e48db88d2bbc73504bc73)
+        ;
+
+        
+    
+    
+                marker_5b22d471a9024bbf5efe3ff8708f5bda.setIcon(icon_0a888c98507fccd105cd219825ad9fa7);
+            
+    
+            var marker_a97162c1e696b0c1b0612ff77f12150c = L.marker(
+                [28.577193867899894, 77.52729015412385],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c5cf42ad9378866fd96fb84de243c328 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f5869ba978e99b027b69d6a649952fd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e38b3e02a5aafa4bea2281cb180df876 = $(`<div id="html_e38b3e02a5aafa4bea2281cb180df876" style="width: 100.0%; height: 100.0%;"><b>Village:</b> dhoom manikpur<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_4f5869ba978e99b027b69d6a649952fd.setContent(html_e38b3e02a5aafa4bea2281cb180df876);
+            
+        
+
+        marker_a97162c1e696b0c1b0612ff77f12150c.bindPopup(popup_4f5869ba978e99b027b69d6a649952fd)
+        ;
+
+        
+    
+    
+                marker_a97162c1e696b0c1b0612ff77f12150c.setIcon(icon_c5cf42ad9378866fd96fb84de243c328);
+            
+    
+            var marker_bcf8d23648e066f165613bd7fb44173d = L.marker(
+                [28.47831205233193, 77.64099330190253],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_799302d61deab883a9ee268deda3d5da = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11c7f0362a32354787a883e046b2ab7e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7ca229b81f977d5ed714d26e3ccd24f = $(`<div id="html_e7ca229b81f977d5ed714d26e3ccd24f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> tilbegumpur<br><b>Sub-District:</b> sikandrabad<br><b>District:</b> bulandshahr<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_11c7f0362a32354787a883e046b2ab7e.setContent(html_e7ca229b81f977d5ed714d26e3ccd24f);
+            
+        
+
+        marker_bcf8d23648e066f165613bd7fb44173d.bindPopup(popup_11c7f0362a32354787a883e046b2ab7e)
+        ;
+
+        
+    
+    
+                marker_bcf8d23648e066f165613bd7fb44173d.setIcon(icon_799302d61deab883a9ee268deda3d5da);
+            
+    
+            var marker_a49458ee65876adb28a2d6d9f8071bbf = L.marker(
+                [28.30697417414991, 76.85222610987555],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_1f419a9deda9d4d18c607afbce3959fd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ab8e4415b768cbde4b1dfa7ccdb7831 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_21b3f3b5e0a6da052518c128038e570d = $(`<div id="html_21b3f3b5e0a6da052518c128038e570d" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bahora kalan<br><b>Sub-District:</b> farrukhnagar<br><b>District:</b> gurgaon<br><b>State:</b> haryana<br><b>Score:</b> 3.90</div>`)[0];
+                popup_3ab8e4415b768cbde4b1dfa7ccdb7831.setContent(html_21b3f3b5e0a6da052518c128038e570d);
+            
+        
+
+        marker_a49458ee65876adb28a2d6d9f8071bbf.bindPopup(popup_3ab8e4415b768cbde4b1dfa7ccdb7831)
+        ;
+
+        
+    
+    
+                marker_a49458ee65876adb28a2d6d9f8071bbf.setIcon(icon_1f419a9deda9d4d18c607afbce3959fd);
+            
+    
+            var marker_f18e3bb2029ef2fad8f54a8cd2e81b65 = L.marker(
+                [28.697176245362243, 77.55177389834832],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_66f80f7258d5a8347a28245c39639b60 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_86a4d31eac3e217060990dc8a2945568 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2e55d50df7d52d3ca1d1f529f9fdda71 = $(`<div id="html_2e55d50df7d52d3ca1d1f529f9fdda71" style="width: 100.0%; height: 100.0%;"><b>Village:</b> masuri<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.90</div>`)[0];
+                popup_86a4d31eac3e217060990dc8a2945568.setContent(html_2e55d50df7d52d3ca1d1f529f9fdda71);
+            
+        
+
+        marker_f18e3bb2029ef2fad8f54a8cd2e81b65.bindPopup(popup_86a4d31eac3e217060990dc8a2945568)
+        ;
+
+        
+    
+    
+                marker_f18e3bb2029ef2fad8f54a8cd2e81b65.setIcon(icon_66f80f7258d5a8347a28245c39639b60);
+            
+    
+            var marker_9229a1093c64b48812fa1224f81daeab = L.marker(
+                [19.18444630107319, 73.09940660644682],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_b6ae67aa769dd9b294adc282219f422c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d61ea732786530020e2a330b2a2094a3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e235586ec38394f19a0415a53ad6ff6c = $(`<div id="html_e235586ec38394f19a0415a53ad6ff6c" style="width: 100.0%; height: 100.0%;"><b>Village:</b> nandiwali tarf pachanand<br><b>Sub-District:</b> kalyan<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.88</div>`)[0];
+                popup_d61ea732786530020e2a330b2a2094a3.setContent(html_e235586ec38394f19a0415a53ad6ff6c);
+            
+        
+
+        marker_9229a1093c64b48812fa1224f81daeab.bindPopup(popup_d61ea732786530020e2a330b2a2094a3)
+        ;
+
+        
+    
+    
+                marker_9229a1093c64b48812fa1224f81daeab.setIcon(icon_b6ae67aa769dd9b294adc282219f422c);
+            
+    
+            var marker_03871b812d531625eb7b979108b3d23a = L.marker(
+                [19.192949714917493, 73.15008334812283],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_caafdd778dc63b274cb3fa59b13dc4a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cbb1227982776272db31e9559aec37a7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88f1eb40534bd0085044a2a4ffb14f8a = $(`<div id="html_88f1eb40534bd0085044a2a4ffb14f8a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> ashele<br><b>Sub-District:</b> ambarnath<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.88</div>`)[0];
+                popup_cbb1227982776272db31e9559aec37a7.setContent(html_88f1eb40534bd0085044a2a4ffb14f8a);
+            
+        
+
+        marker_03871b812d531625eb7b979108b3d23a.bindPopup(popup_cbb1227982776272db31e9559aec37a7)
+        ;
+
+        
+    
+    
+                marker_03871b812d531625eb7b979108b3d23a.setIcon(icon_caafdd778dc63b274cb3fa59b13dc4a1);
+            
+    
+            var marker_b3c7532492f932a43d1389789202d88b = L.marker(
+                [19.478053027408663, 72.82331011688768],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3b94beb5f9eea76eabc6d5d137b8773c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac06d77a47df9e81330e615233943f2b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ca2d369f358d8dc7bdf833f4a814f67 = $(`<div id="html_3ca2d369f358d8dc7bdf833f4a814f67" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kopri<br><b>Sub-District:</b> vasai<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.88</div>`)[0];
+                popup_ac06d77a47df9e81330e615233943f2b.setContent(html_3ca2d369f358d8dc7bdf833f4a814f67);
+            
+        
+
+        marker_b3c7532492f932a43d1389789202d88b.bindPopup(popup_ac06d77a47df9e81330e615233943f2b)
+        ;
+
+        
+    
+    
+                marker_b3c7532492f932a43d1389789202d88b.setIcon(icon_3b94beb5f9eea76eabc6d5d137b8773c);
+            
+    
+            var marker_83d153d0a4ec1fade42143bd3a505f46 = L.marker(
+                [22.49861454585177, 88.42635011866857],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_76063ceb601bf2165a52df859c1eb658 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_317bced7fe602c9595669f9b2f41a8d1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c11504dab732db38126121c60f540bbe = $(`<div id="html_c11504dab732db38126121c60f540bbe" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bhagabanpur<br><b>Sub-District:</b> sonarpur<br><b>District:</b> south twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.80</div>`)[0];
+                popup_317bced7fe602c9595669f9b2f41a8d1.setContent(html_c11504dab732db38126121c60f540bbe);
+            
+        
+
+        marker_83d153d0a4ec1fade42143bd3a505f46.bindPopup(popup_317bced7fe602c9595669f9b2f41a8d1)
+        ;
+
+        
+    
+    
+                marker_83d153d0a4ec1fade42143bd3a505f46.setIcon(icon_76063ceb601bf2165a52df859c1eb658);
+            
+    
+            var marker_0ac844a3a2d360c07658367a8bde55fc = L.marker(
+                [13.143802529231738, 77.66182072300343],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_d947fd8619b3baa5794628fdd9c09251 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2674fed8a084502f37cdd1919bbaf5c6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_31fe7c5124f7d050445946e82937c42a = $(`<div id="html_31fe7c5124f7d050445946e82937c42a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bagalur<br><b>Sub-District:</b> bangalore north<br><b>District:</b> bangalore<br><b>State:</b> karnataka<br><b>Score:</b> 3.72</div>`)[0];
+                popup_2674fed8a084502f37cdd1919bbaf5c6.setContent(html_31fe7c5124f7d050445946e82937c42a);
+            
+        
+
+        marker_0ac844a3a2d360c07658367a8bde55fc.bindPopup(popup_2674fed8a084502f37cdd1919bbaf5c6)
+        ;
+
+        
+    
+    
+                marker_0ac844a3a2d360c07658367a8bde55fc.setIcon(icon_d947fd8619b3baa5794628fdd9c09251);
+            
+    
+            var marker_d5f2ff5f3d5bf71db45686ae0de9b638 = L.marker(
+                [12.818496310048836, 77.66527036983967],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_d620573d047a3ad7733ab624bd645aba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f8586d20c396393d247e4324721fc6a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40516fcd79e6d16224216cd5deed9dd8 = $(`<div id="html_40516fcd79e6d16224216cd5deed9dd8" style="width: 100.0%; height: 100.0%;"><b>Village:</b> thirupalya<br><b>Sub-District:</b> anekal<br><b>District:</b> bangalore<br><b>State:</b> karnataka<br><b>Score:</b> 3.72</div>`)[0];
+                popup_0f8586d20c396393d247e4324721fc6a.setContent(html_40516fcd79e6d16224216cd5deed9dd8);
+            
+        
+
+        marker_d5f2ff5f3d5bf71db45686ae0de9b638.bindPopup(popup_0f8586d20c396393d247e4324721fc6a)
+        ;
+
+        
+    
+    
+                marker_d5f2ff5f3d5bf71db45686ae0de9b638.setIcon(icon_d620573d047a3ad7733ab624bd645aba);
+            
+    
+            var marker_b41af22614e315e00cd119556eb2b1e5 = L.marker(
+                [12.716329528759651, 77.84251840359103],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c3589f115e1b33b736e7baecd37efd02 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_545a3898821c409612858db1e59e9e1f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b4ad6a5cad48723381d6c5b6c4ca6ca6 = $(`<div id="html_b4ad6a5cad48723381d6c5b6c4ca6ca6" style="width: 100.0%; height: 100.0%;"><b>Village:</b> chenathur<br><b>Sub-District:</b> hosur<br><b>District:</b> krishnagiri<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.72</div>`)[0];
+                popup_545a3898821c409612858db1e59e9e1f.setContent(html_b4ad6a5cad48723381d6c5b6c4ca6ca6);
+            
+        
+
+        marker_b41af22614e315e00cd119556eb2b1e5.bindPopup(popup_545a3898821c409612858db1e59e9e1f)
+        ;
+
+        
+    
+    
+                marker_b41af22614e315e00cd119556eb2b1e5.setIcon(icon_c3589f115e1b33b736e7baecd37efd02);
+            
+    
+            var marker_f51459dbbec23c8520407db848b915fc = L.marker(
+                [12.806689923391, 77.51590317927669],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_a72c44d2e323aa77f12f72e64dc53f6d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3dac90c146c6d684b008191477eb5ad4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_af76653983f63d480b3285f01205f4e7 = $(`<div id="html_af76653983f63d480b3285f01205f4e7" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kaggalipura<br><b>Sub-District:</b> bangalore south<br><b>District:</b> bangalore<br><b>State:</b> karnataka<br><b>Score:</b> 3.72</div>`)[0];
+                popup_3dac90c146c6d684b008191477eb5ad4.setContent(html_af76653983f63d480b3285f01205f4e7);
+            
+        
+
+        marker_f51459dbbec23c8520407db848b915fc.bindPopup(popup_3dac90c146c6d684b008191477eb5ad4)
+        ;
+
+        
+    
+    
+                marker_f51459dbbec23c8520407db848b915fc.setIcon(icon_a72c44d2e323aa77f12f72e64dc53f6d);
+            
+    
+            var marker_e97a1e6d206018cad0b910f4d335e135 = L.marker(
+                [12.86103342621503, 80.18378252884013],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_79ef048b9f72567994f62999e7835931 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_51a8f232fe46f78cefb3aa23fcb73ea0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_03f00477d4811ee33cbd7d993ecd9feb = $(`<div id="html_03f00477d4811ee33cbd7d993ecd9feb" style="width: 100.0%; height: 100.0%;"><b>Village:</b> perumbakkam<br><b>Sub-District:</b> sholinganallur<br><b>District:</b> kancheepuram<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_51a8f232fe46f78cefb3aa23fcb73ea0.setContent(html_03f00477d4811ee33cbd7d993ecd9feb);
+            
+        
+
+        marker_e97a1e6d206018cad0b910f4d335e135.bindPopup(popup_51a8f232fe46f78cefb3aa23fcb73ea0)
+        ;
+
+        
+    
+    
+                marker_e97a1e6d206018cad0b910f4d335e135.setIcon(icon_79ef048b9f72567994f62999e7835931);
+            
+    
+            var marker_0d6f814c758a539bfd851d64fa1dda9f = L.marker(
+                [12.851679609874964, 80.1643584393655],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3d5404efb0df644deb2e3889ac10c76c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3acfbfd2f1912fcc8cd652466cbc7ee3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aae002a9b2bef6987e4110127f62cb6a = $(`<div id="html_aae002a9b2bef6987e4110127f62cb6a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sittalapakkam<br><b>Sub-District:</b> sholinganallur<br><b>District:</b> kancheepuram<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_3acfbfd2f1912fcc8cd652466cbc7ee3.setContent(html_aae002a9b2bef6987e4110127f62cb6a);
+            
+        
+
+        marker_0d6f814c758a539bfd851d64fa1dda9f.bindPopup(popup_3acfbfd2f1912fcc8cd652466cbc7ee3)
+        ;
+
+        
+    
+    
+                marker_0d6f814c758a539bfd851d64fa1dda9f.setIcon(icon_3d5404efb0df644deb2e3889ac10c76c);
+            
+    
+            var marker_c1a459d4ef489124fa69b84df8efdf4c = L.marker(
+                [13.22520391345386, 80.28094370018947],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_a28326c038d91667a62dada7d3cdee46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_135cf2614f73099b44389323522e09fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_850e0a9d8e99a4287ae3fb83f49cf153 = $(`<div id="html_850e0a9d8e99a4287ae3fb83f49cf153" style="width: 100.0%; height: 100.0%;"><b>Village:</b> vallur<br><b>Sub-District:</b> ponneri<br><b>District:</b> thiruvallur<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_135cf2614f73099b44389323522e09fa.setContent(html_850e0a9d8e99a4287ae3fb83f49cf153);
+            
+        
+
+        marker_c1a459d4ef489124fa69b84df8efdf4c.bindPopup(popup_135cf2614f73099b44389323522e09fa)
+        ;
+
+        
+    
+    
+                marker_c1a459d4ef489124fa69b84df8efdf4c.setIcon(icon_a28326c038d91667a62dada7d3cdee46);
+            
+    
+            var marker_ce0e6cf8a2436334920a3b11af4e2ed5 = L.marker(
+                [12.858102466661794, 80.05100310309584],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_91b5aa29ccf1a86380400d224242a403 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_894609292db57812c85aedaabf0e4fff = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac179fe3b4992d03e724015d89d76b5c = $(`<div id="html_ac179fe3b4992d03e724015d89d76b5c" style="width: 100.0%; height: 100.0%;"><b>Village:</b> mannivakkam<br><b>Sub-District:</b> chengalpattu<br><b>District:</b> kancheepuram<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_894609292db57812c85aedaabf0e4fff.setContent(html_ac179fe3b4992d03e724015d89d76b5c);
+            
+        
+
+        marker_ce0e6cf8a2436334920a3b11af4e2ed5.bindPopup(popup_894609292db57812c85aedaabf0e4fff)
+        ;
+
+        
+    
+    
+                marker_ce0e6cf8a2436334920a3b11af4e2ed5.setIcon(icon_91b5aa29ccf1a86380400d224242a403);
+            
+    
+            var marker_c95013cf838432a15b7c00efc9830266 = L.marker(
+                [13.15645108161834, 80.10748936855607],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3a988520ef0f514828e64ef19c1e7373 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_67e28abb3cf4069f823478e570ef12eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c7d2c6dd0fe1370a8c7fde017c985a2 = $(`<div id="html_5c7d2c6dd0fe1370a8c7fde017c985a2" style="width: 100.0%; height: 100.0%;"><b>Village:</b> vellanur<br><b>Sub-District:</b> ambattur<br><b>District:</b> thiruvallur<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_67e28abb3cf4069f823478e570ef12eb.setContent(html_5c7d2c6dd0fe1370a8c7fde017c985a2);
+            
+        
+
+        marker_c95013cf838432a15b7c00efc9830266.bindPopup(popup_67e28abb3cf4069f823478e570ef12eb)
+        ;
+
+        
+    
+    
+                marker_c95013cf838432a15b7c00efc9830266.setIcon(icon_3a988520ef0f514828e64ef19c1e7373);
+            
+    
+            var marker_1c3ec311d69f276b57f92ae9c00fb53f = L.marker(
+                [12.881654148116704, 80.05640545665757],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c91a037965f4fad2c8950b5ea82aed3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4a930184ec72f78259b15d6051373aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ef9e9c37d6c2993d1067ea97493653f = $(`<div id="html_9ef9e9c37d6c2993d1067ea97493653f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> mudichur<br><b>Sub-District:</b> tambaram<br><b>District:</b> kancheepuram<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_c4a930184ec72f78259b15d6051373aa.setContent(html_9ef9e9c37d6c2993d1067ea97493653f);
+            
+        
+
+        marker_1c3ec311d69f276b57f92ae9c00fb53f.bindPopup(popup_c4a930184ec72f78259b15d6051373aa)
+        ;
+
+        
+    
+    
+                marker_1c3ec311d69f276b57f92ae9c00fb53f.setIcon(icon_c91a037965f4fad2c8950b5ea82aed3a);
+            
+    
+            var marker_9f5df64d57b9f19b85cc19f425d4e622 = L.marker(
+                [13.172233186700453, 80.07940924434642],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_600aac327e09d554a11d55313b73bb39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3f33910517323910cf0d933edfe37f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7188117afff940676ec8e7f5fee4dd2d = $(`<div id="html_7188117afff940676ec8e7f5fee4dd2d" style="width: 100.0%; height: 100.0%;"><b>Village:</b> morai<br><b>Sub-District:</b> ambattur<br><b>District:</b> thiruvallur<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_b3f33910517323910cf0d933edfe37f8.setContent(html_7188117afff940676ec8e7f5fee4dd2d);
+            
+        
+
+        marker_9f5df64d57b9f19b85cc19f425d4e622.bindPopup(popup_b3f33910517323910cf0d933edfe37f8)
+        ;
+
+        
+    
+    
+                marker_9f5df64d57b9f19b85cc19f425d4e622.setIcon(icon_600aac327e09d554a11d55313b73bb39);
+            
+    
+            var marker_b969a9302d69f8af992399a629e86ea9 = L.marker(
+                [12.831315931255824, 80.20576531867977],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_20cc8a3e7cb4720b13640c1ba4e84b18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_877f409caba1c5bccccd6b13161cf366 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abd71cbdd0d125e78e1a5b0a11db8016 = $(`<div id="html_abd71cbdd0d125e78e1a5b0a11db8016" style="width: 100.0%; height: 100.0%;"><b>Village:</b> semmanjeri<br><b>Sub-District:</b> sholinganallur<br><b>District:</b> kancheepuram<br><b>State:</b> tamil nadu<br><b>Score:</b> 3.70</div>`)[0];
+                popup_877f409caba1c5bccccd6b13161cf366.setContent(html_abd71cbdd0d125e78e1a5b0a11db8016);
+            
+        
+
+        marker_b969a9302d69f8af992399a629e86ea9.bindPopup(popup_877f409caba1c5bccccd6b13161cf366)
+        ;
+
+        
+    
+    
+                marker_b969a9302d69f8af992399a629e86ea9.setIcon(icon_20cc8a3e7cb4720b13640c1ba4e84b18);
+            
+    
+            var marker_c568e84626e297c24778bf529a218123 = L.marker(
+                [28.776466856022346, 77.2550946696391],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_2df4bd1ed3a70bfa704b2ece16a08088 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c8883e31b424508ad94589350a4e8db5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b41325761df956e6f828dbcd69e5aea = $(`<div id="html_5b41325761df956e6f828dbcd69e5aea" style="width: 100.0%; height: 100.0%;"><b>Village:</b> khanpur japti<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.69</div>`)[0];
+                popup_c8883e31b424508ad94589350a4e8db5.setContent(html_5b41325761df956e6f828dbcd69e5aea);
+            
+        
+
+        marker_c568e84626e297c24778bf529a218123.bindPopup(popup_c8883e31b424508ad94589350a4e8db5)
+        ;
+
+        
+    
+    
+                marker_c568e84626e297c24778bf529a218123.setIcon(icon_2df4bd1ed3a70bfa704b2ece16a08088);
+            
+    
+            var marker_26a10389898dbfb4567c0fe50cf3b097 = L.marker(
+                [17.557968047770864, 78.51629568371],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_1029855bcd1aa9e40ab6e1ce611cd0e6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e464ef1b1d50b0c8f0f75517482c9b0b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60797bee19a90feb88a970d679707bd0 = $(`<div id="html_60797bee19a90feb88a970d679707bd0" style="width: 100.0%; height: 100.0%;"><b>Village:</b> devaryamjal<br><b>Sub-District:</b> shamirpet<br><b>District:</b> rangareddy<br><b>State:</b> andhra pradesh<br><b>Score:</b> 3.68</div>`)[0];
+                popup_e464ef1b1d50b0c8f0f75517482c9b0b.setContent(html_60797bee19a90feb88a970d679707bd0);
+            
+        
+
+        marker_26a10389898dbfb4567c0fe50cf3b097.bindPopup(popup_e464ef1b1d50b0c8f0f75517482c9b0b)
+        ;
+
+        
+    
+    
+                marker_26a10389898dbfb4567c0fe50cf3b097.setIcon(icon_1029855bcd1aa9e40ab6e1ce611cd0e6);
+            
+    
+            var marker_3ad85823fe097a9d32f5fa57016fbba1 = L.marker(
+                [17.203170138590487, 78.45251858376278],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_9110de0c0a9defd6be9ad5f0b565b9ed = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a40ce64bb2d45d41db8f5ebac2a3c827 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_385302a10a1c4f19fca04fd53feb9e1a = $(`<div id="html_385302a10a1c4f19fca04fd53feb9e1a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> mankhal<br><b>Sub-District:</b> maheswaram<br><b>District:</b> rangareddy<br><b>State:</b> andhra pradesh<br><b>Score:</b> 3.68</div>`)[0];
+                popup_a40ce64bb2d45d41db8f5ebac2a3c827.setContent(html_385302a10a1c4f19fca04fd53feb9e1a);
+            
+        
+
+        marker_3ad85823fe097a9d32f5fa57016fbba1.bindPopup(popup_a40ce64bb2d45d41db8f5ebac2a3c827)
+        ;
+
+        
+    
+    
+                marker_3ad85823fe097a9d32f5fa57016fbba1.setIcon(icon_9110de0c0a9defd6be9ad5f0b565b9ed);
+            
+    
+            var marker_0c8dd480f24378306a828822ce558180 = L.marker(
+                [17.431114598224905, 78.65567834018162],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_b95f5df4507ccbdbdb4436d18f02b690 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e44da48b8345ae4cd2dcf2b5372eb05a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a149895a4f45be4938844b921a7df0c9 = $(`<div id="html_a149895a4f45be4938844b921a7df0c9" style="width: 100.0%; height: 100.0%;"><b>Village:</b> annojiguda<br><b>Sub-District:</b> ghatkesar<br><b>District:</b> rangareddy<br><b>State:</b> andhra pradesh<br><b>Score:</b> 3.68</div>`)[0];
+                popup_e44da48b8345ae4cd2dcf2b5372eb05a.setContent(html_a149895a4f45be4938844b921a7df0c9);
+            
+        
+
+        marker_0c8dd480f24378306a828822ce558180.bindPopup(popup_e44da48b8345ae4cd2dcf2b5372eb05a)
+        ;
+
+        
+    
+    
+                marker_0c8dd480f24378306a828822ce558180.setIcon(icon_b95f5df4507ccbdbdb4436d18f02b690);
+            
+    
+            var marker_ca0ec6f415c327c932e23d963c9de702 = L.marker(
+                [22.588089985580964, 88.20040239346108],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_41cff157eb2ca6f9b441da6f88a98a3f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_973a9e2dfc76cbd0dee7aa8d0115a032 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed8aeca10172d42540f7969fc3c64a3b = $(`<div id="html_ed8aeca10172d42540f7969fc3c64a3b" style="width: 100.0%; height: 100.0%;"><b>Village:</b> amre<br><b>Sub-District:</b> domjur<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.64</div>`)[0];
+                popup_973a9e2dfc76cbd0dee7aa8d0115a032.setContent(html_ed8aeca10172d42540f7969fc3c64a3b);
+            
+        
+
+        marker_ca0ec6f415c327c932e23d963c9de702.bindPopup(popup_973a9e2dfc76cbd0dee7aa8d0115a032)
+        ;
+
+        
+    
+    
+                marker_ca0ec6f415c327c932e23d963c9de702.setIcon(icon_41cff157eb2ca6f9b441da6f88a98a3f);
+            
+    
+            var marker_309c1c79c29e22ebeeff8bab42f95784 = L.marker(
+                [22.903535488475477, 88.3812466868396],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_8fbea5de5324669fce343d782ee43b7e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1a4ac28c6c5e64efb2385879cfc8d24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b714e8384e98ed96df74d5c4beb1e993 = $(`<div id="html_b714e8384e98ed96df74d5c4beb1e993" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kapasdanga p<br><b>Sub-District:</b> chinsurah magra<br><b>District:</b> hugli<br><b>State:</b> west bengal<br><b>Score:</b> 3.62</div>`)[0];
+                popup_c1a4ac28c6c5e64efb2385879cfc8d24.setContent(html_b714e8384e98ed96df74d5c4beb1e993);
+            
+        
+
+        marker_309c1c79c29e22ebeeff8bab42f95784.bindPopup(popup_c1a4ac28c6c5e64efb2385879cfc8d24)
+        ;
+
+        
+    
+    
+                marker_309c1c79c29e22ebeeff8bab42f95784.setIcon(icon_8fbea5de5324669fce343d782ee43b7e);
+            
+    
+            var marker_49b88f4b5954b3619b895bec4581b32e = L.marker(
+                [18.85782605919029, 72.94385421320649],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_9ff5393d443451fc28e272cd606f8c0b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5311fed83931556e0496fecce5662ff6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_73f241baf68a591d06e0bc072f88f118 = $(`<div id="html_73f241baf68a591d06e0bc072f88f118" style="width: 100.0%; height: 100.0%;"><b>Village:</b> mhatwali<br><b>Sub-District:</b> uran<br><b>District:</b> raigarh<br><b>State:</b> maharashtra<br><b>Score:</b> 3.62</div>`)[0];
+                popup_5311fed83931556e0496fecce5662ff6.setContent(html_73f241baf68a591d06e0bc072f88f118);
+            
+        
+
+        marker_49b88f4b5954b3619b895bec4581b32e.bindPopup(popup_5311fed83931556e0496fecce5662ff6)
+        ;
+
+        
+    
+    
+                marker_49b88f4b5954b3619b895bec4581b32e.setIcon(icon_9ff5393d443451fc28e272cd606f8c0b);
+            
+    
+            var marker_75abfa3821285cd6848b61b670aca9b9 = L.marker(
+                [28.767211413515003, 77.4963909815832],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_96afb143d75d25b3d58897944e8957eb = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e6c288897a4b654fc83a497131f54fb2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ec77a01769d4aaf610673dbbb6654ba = $(`<div id="html_3ec77a01769d4aaf610673dbbb6654ba" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sahbiswa<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.62</div>`)[0];
+                popup_e6c288897a4b654fc83a497131f54fb2.setContent(html_3ec77a01769d4aaf610673dbbb6654ba);
+            
+        
+
+        marker_75abfa3821285cd6848b61b670aca9b9.bindPopup(popup_e6c288897a4b654fc83a497131f54fb2)
+        ;
+
+        
+    
+    
+                marker_75abfa3821285cd6848b61b670aca9b9.setIcon(icon_96afb143d75d25b3d58897944e8957eb);
+            
+    
+            var marker_5b8f6404de8ab90abae823f1c841faab = L.marker(
+                [18.88595479066832, 72.95018998069968],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_813bf9a23d30d3d2207ce441d20f0add = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9cb57fe1b432f3c814f9804d70c9ad80 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_532f812ec195b65e4557bd11b4dabfa6 = $(`<div id="html_532f812ec195b65e4557bd11b4dabfa6" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kaladhonda<br><b>Sub-District:</b> uran<br><b>District:</b> raigarh<br><b>State:</b> maharashtra<br><b>Score:</b> 3.61</div>`)[0];
+                popup_9cb57fe1b432f3c814f9804d70c9ad80.setContent(html_532f812ec195b65e4557bd11b4dabfa6);
+            
+        
+
+        marker_5b8f6404de8ab90abae823f1c841faab.bindPopup(popup_9cb57fe1b432f3c814f9804d70c9ad80)
+        ;
+
+        
+    
+    
+                marker_5b8f6404de8ab90abae823f1c841faab.setIcon(icon_813bf9a23d30d3d2207ce441d20f0add);
+            
+    
+            var marker_89468765d236e75d01cf758bda3f74f7 = L.marker(
+                [18.477627501156714, 73.9756045433125],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_7fff6840f1d35e5a0b0425f013284ca1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9a791727ce43dc39b3051760f959a1bc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1dea279afb33373c17b600d27f2d88a6 = $(`<div id="html_1dea279afb33373c17b600d27f2d88a6" style="width: 100.0%; height: 100.0%;"><b>Village:</b> fursungi<br><b>Sub-District:</b> haveli<br><b>District:</b> pune<br><b>State:</b> maharashtra<br><b>Score:</b> 3.61</div>`)[0];
+                popup_9a791727ce43dc39b3051760f959a1bc.setContent(html_1dea279afb33373c17b600d27f2d88a6);
+            
+        
+
+        marker_89468765d236e75d01cf758bda3f74f7.bindPopup(popup_9a791727ce43dc39b3051760f959a1bc)
+        ;
+
+        
+    
+    
+                marker_89468765d236e75d01cf758bda3f74f7.setIcon(icon_7fff6840f1d35e5a0b0425f013284ca1);
+            
+    
+            var marker_dcd49cad471380f6dd908cc2f1c275ff = L.marker(
+                [18.55435651168727, 73.74932460318186],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_4f3b6becc3ba756fc5a1cae0394a4431 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7427c4977a9fd7085e6f0a642233a437 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6133415b022d92dc1148db3bb3031e1 = $(`<div id="html_d6133415b022d92dc1148db3bb3031e1" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bavadhan bk<br><b>Sub-District:</b> mulshi<br><b>District:</b> pune<br><b>State:</b> maharashtra<br><b>Score:</b> 3.61</div>`)[0];
+                popup_7427c4977a9fd7085e6f0a642233a437.setContent(html_d6133415b022d92dc1148db3bb3031e1);
+            
+        
+
+        marker_dcd49cad471380f6dd908cc2f1c275ff.bindPopup(popup_7427c4977a9fd7085e6f0a642233a437)
+        ;
+
+        
+    
+    
+                marker_dcd49cad471380f6dd908cc2f1c275ff.setIcon(icon_4f3b6becc3ba756fc5a1cae0394a4431);
+            
+    
+            var marker_5000afc0302bccf697981a214bc709cb = L.marker(
+                [18.50026553323497, 74.0004966781724],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_284d1fbb51443bba3ed7ecff9e97a6c7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c6bb4976847805874696566ec40f99d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e33aa4526cdac2b2785a64ef34d73a47 = $(`<div id="html_e33aa4526cdac2b2785a64ef34d73a47" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kadamwak wasti<br><b>Sub-District:</b> haveli<br><b>District:</b> pune<br><b>State:</b> maharashtra<br><b>Score:</b> 3.61</div>`)[0];
+                popup_c6bb4976847805874696566ec40f99d2.setContent(html_e33aa4526cdac2b2785a64ef34d73a47);
+            
+        
+
+        marker_5000afc0302bccf697981a214bc709cb.bindPopup(popup_c6bb4976847805874696566ec40f99d2)
+        ;
+
+        
+    
+    
+                marker_5000afc0302bccf697981a214bc709cb.setIcon(icon_284d1fbb51443bba3ed7ecff9e97a6c7);
+            
+    
+            var marker_1ae1778412d198be31e662ab27a080a3 = L.marker(
+                [22.761695816945124, 88.39569731313823],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_46856c364407107e601a5b66cb1fc1c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_55fdc568b6cded7f79c3e7312139cdae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbd89b3137b0568ad4142408925bf381 = $(`<div id="html_fbd89b3137b0568ad4142408925bf381" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bara kanthalia<br><b>Sub-District:</b> barrackpur-2<br><b>District:</b> north twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.61</div>`)[0];
+                popup_55fdc568b6cded7f79c3e7312139cdae.setContent(html_fbd89b3137b0568ad4142408925bf381);
+            
+        
+
+        marker_1ae1778412d198be31e662ab27a080a3.bindPopup(popup_55fdc568b6cded7f79c3e7312139cdae)
+        ;
+
+        
+    
+    
+                marker_1ae1778412d198be31e662ab27a080a3.setIcon(icon_46856c364407107e601a5b66cb1fc1c2);
+            
+    
+            var marker_05886570f330e7f01405ae563ad7ad53 = L.marker(
+                [28.666746735238217, 77.55867542584916],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_2c83e54a696a478c4318a8efc90c6495 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a19cd969382e7f65bc0883d05143a73b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e7dc64fce46915fc7b04745f081e489 = $(`<div id="html_4e7dc64fce46915fc7b04745f081e489" style="width: 100.0%; height: 100.0%;"><b>Village:</b> shekhpur khichara<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.61</div>`)[0];
+                popup_a19cd969382e7f65bc0883d05143a73b.setContent(html_4e7dc64fce46915fc7b04745f081e489);
+            
+        
+
+        marker_05886570f330e7f01405ae563ad7ad53.bindPopup(popup_a19cd969382e7f65bc0883d05143a73b)
+        ;
+
+        
+    
+    
+                marker_05886570f330e7f01405ae563ad7ad53.setIcon(icon_2c83e54a696a478c4318a8efc90c6495);
+            
+    
+            var marker_53ca31f0379568150760d6912f7e58e4 = L.marker(
+                [28.754903318998863, 77.50275473099015],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_48c00833fbb38c6d840419e72c11ccb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d6f60ef3bfeb5d0882dac3accd9d8fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41e16f04c0521705ab35ab452f646c2f = $(`<div id="html_41e16f04c0521705ab35ab452f646c2f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> mohammadpur dwedha<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.60</div>`)[0];
+                popup_4d6f60ef3bfeb5d0882dac3accd9d8fb.setContent(html_41e16f04c0521705ab35ab452f646c2f);
+            
+        
+
+        marker_53ca31f0379568150760d6912f7e58e4.bindPopup(popup_4d6f60ef3bfeb5d0882dac3accd9d8fb)
+        ;
+
+        
+    
+    
+                marker_53ca31f0379568150760d6912f7e58e4.setIcon(icon_48c00833fbb38c6d840419e72c11ccb5);
+            
+    
+            var marker_4ddbed4271859689a71558a1df4325f1 = L.marker(
+                [28.869797282291, 77.6019120384998],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c07ca7692ab6ebc24e50588dad8caed1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3bd1180fc04dcfaf8c967bf1a00e88e2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_017ed1854364662f9cceb69ff8c3ec01 = $(`<div id="html_017ed1854364662f9cceb69ff8c3ec01" style="width: 100.0%; height: 100.0%;"><b>Village:</b> quadrabad<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.60</div>`)[0];
+                popup_3bd1180fc04dcfaf8c967bf1a00e88e2.setContent(html_017ed1854364662f9cceb69ff8c3ec01);
+            
+        
+
+        marker_4ddbed4271859689a71558a1df4325f1.bindPopup(popup_3bd1180fc04dcfaf8c967bf1a00e88e2)
+        ;
+
+        
+    
+    
+                marker_4ddbed4271859689a71558a1df4325f1.setIcon(icon_c07ca7692ab6ebc24e50588dad8caed1);
+            
+    
+            var marker_15eb0d217d19cab262db843a19a68536 = L.marker(
+                [28.54875744004448, 77.53012939486578],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c9c8ebb471bdd09f9ac37b885fc76949 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00506e5faf74ee4d49aebab808e51cf3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_283116daaddc7bf4c85a1406d4f8fb32 = $(`<div id="html_283116daaddc7bf4c85a1406d4f8fb32" style="width: 100.0%; height: 100.0%;"><b>Village:</b> roopvas<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.60</div>`)[0];
+                popup_00506e5faf74ee4d49aebab808e51cf3.setContent(html_283116daaddc7bf4c85a1406d4f8fb32);
+            
+        
+
+        marker_15eb0d217d19cab262db843a19a68536.bindPopup(popup_00506e5faf74ee4d49aebab808e51cf3)
+        ;
+
+        
+    
+    
+                marker_15eb0d217d19cab262db843a19a68536.setIcon(icon_c9c8ebb471bdd09f9ac37b885fc76949);
+            
+    
+            var marker_7ee5eb09a484ec0020c883679a09a97f = L.marker(
+                [28.46684268048173, 77.65098486072719],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_19434064ae004e7a050f0d63b1377cbc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_68b6efff08abc1106ebf56df0474be03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_614262536672397cfd40e73d1892ffef = $(`<div id="html_614262536672397cfd40e73d1892ffef" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sherpur<br><b>Sub-District:</b> sikandrabad<br><b>District:</b> bulandshahr<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.60</div>`)[0];
+                popup_68b6efff08abc1106ebf56df0474be03.setContent(html_614262536672397cfd40e73d1892ffef);
+            
+        
+
+        marker_7ee5eb09a484ec0020c883679a09a97f.bindPopup(popup_68b6efff08abc1106ebf56df0474be03)
+        ;
+
+        
+    
+    
+                marker_7ee5eb09a484ec0020c883679a09a97f.setIcon(icon_19434064ae004e7a050f0d63b1377cbc);
+            
+    
+            var marker_77e874ff647df885299b2d858501216d = L.marker(
+                [29.127949048890716, 77.02762515554203],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_81019217daf9b4c120854a5c7fee694a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30f12d85f51b5582e6393dccb8f90ba2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_04d76adf6f8fe79595d6686e6078d39a = $(`<div id="html_04d76adf6f8fe79595d6686e6078d39a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bai<br><b>Sub-District:</b> ganaur<br><b>District:</b> sonipat<br><b>State:</b> haryana<br><b>Score:</b> 3.59</div>`)[0];
+                popup_30f12d85f51b5582e6393dccb8f90ba2.setContent(html_04d76adf6f8fe79595d6686e6078d39a);
+            
+        
+
+        marker_77e874ff647df885299b2d858501216d.bindPopup(popup_30f12d85f51b5582e6393dccb8f90ba2)
+        ;
+
+        
+    
+    
+                marker_77e874ff647df885299b2d858501216d.setIcon(icon_81019217daf9b4c120854a5c7fee694a);
+            
+    
+            var marker_a9f35edd99cd9d996933132713b4081e = L.marker(
+                [28.832759184490147, 77.5532011201349],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_27afb42336b11a5682eceffe21cdd4f9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6b4bdd746f513b94a9cd77482d216837 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d6eafea66f9d6efff558394be97bf279 = $(`<div id="html_d6eafea66f9d6efff558394be97bf279" style="width: 100.0%; height: 100.0%;"><b>Village:</b> phaphrana<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.59</div>`)[0];
+                popup_6b4bdd746f513b94a9cd77482d216837.setContent(html_d6eafea66f9d6efff558394be97bf279);
+            
+        
+
+        marker_a9f35edd99cd9d996933132713b4081e.bindPopup(popup_6b4bdd746f513b94a9cd77482d216837)
+        ;
+
+        
+    
+    
+                marker_a9f35edd99cd9d996933132713b4081e.setIcon(icon_27afb42336b11a5682eceffe21cdd4f9);
+            
+    
+            var marker_87fa3609aacd47723b4e7312a7b9c040 = L.marker(
+                [22.59347854105952, 88.22298222801551],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3aac9b907b2cc5da22a4511fc8a5dcb5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2e94e39ac4f5d56f1ca3e9320afb8217 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef8e9edf2ecf76e6b00dbc627220aa54 = $(`<div id="html_ef8e9edf2ecf76e6b00dbc627220aa54" style="width: 100.0%; height: 100.0%;"><b>Village:</b> jangalpur<br><b>Sub-District:</b> sankrail<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.59</div>`)[0];
+                popup_2e94e39ac4f5d56f1ca3e9320afb8217.setContent(html_ef8e9edf2ecf76e6b00dbc627220aa54);
+            
+        
+
+        marker_87fa3609aacd47723b4e7312a7b9c040.bindPopup(popup_2e94e39ac4f5d56f1ca3e9320afb8217)
+        ;
+
+        
+    
+    
+                marker_87fa3609aacd47723b4e7312a7b9c040.setIcon(icon_3aac9b907b2cc5da22a4511fc8a5dcb5);
+            
+    
+            var marker_4647c9a2d5a4dd5e8e665cfbf02613d4 = L.marker(
+                [28.565100113964487, 77.550207232759],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_84cc03734e94b85daadae1fae87facf3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd786cf081313dd852a266184a290c8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4dfb6cebc995ba75da604c97d5739638 = $(`<div id="html_4dfb6cebc995ba75da604c97d5739638" style="width: 100.0%; height: 100.0%;"><b>Village:</b> badhpura<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.59</div>`)[0];
+                popup_cd786cf081313dd852a266184a290c8e.setContent(html_4dfb6cebc995ba75da604c97d5739638);
+            
+        
+
+        marker_4647c9a2d5a4dd5e8e665cfbf02613d4.bindPopup(popup_cd786cf081313dd852a266184a290c8e)
+        ;
+
+        
+    
+    
+                marker_4647c9a2d5a4dd5e8e665cfbf02613d4.setIcon(icon_84cc03734e94b85daadae1fae87facf3);
+            
+    
+            var marker_b6cf31d72f96eb33edcc0c3500d370bd = L.marker(
+                [28.618075043078846, 77.49553032095983],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_00ce8bba0fb4e3ac5f248000a3b5a885 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9043b77fa7ba5d11e9e2aedc6ab7fb9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_834303f213f0b7dcda3c960db29e97a3 = $(`<div id="html_834303f213f0b7dcda3c960db29e97a3" style="width: 100.0%; height: 100.0%;"><b>Village:</b> talabpur urf hathipur<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.59</div>`)[0];
+                popup_a9043b77fa7ba5d11e9e2aedc6ab7fb9.setContent(html_834303f213f0b7dcda3c960db29e97a3);
+            
+        
+
+        marker_b6cf31d72f96eb33edcc0c3500d370bd.bindPopup(popup_a9043b77fa7ba5d11e9e2aedc6ab7fb9)
+        ;
+
+        
+    
+    
+                marker_b6cf31d72f96eb33edcc0c3500d370bd.setIcon(icon_00ce8bba0fb4e3ac5f248000a3b5a885);
+            
+    
+            var marker_6d0ae818194d0968b511a74d20ea6bd8 = L.marker(
+                [22.69936187624428, 88.42479461816365],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_35e828984fea6c82ca1a1af06b9f4be4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5cd94fe904fa79155daf0b342c5f33ce = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1649f594e813be7824fed339cc55f530 = $(`<div id="html_1649f594e813be7824fed339cc55f530" style="width: 100.0%; height: 100.0%;"><b>Village:</b> jugberia<br><b>Sub-District:</b> barrackpur-2<br><b>District:</b> north twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.58</div>`)[0];
+                popup_5cd94fe904fa79155daf0b342c5f33ce.setContent(html_1649f594e813be7824fed339cc55f530);
+            
+        
+
+        marker_6d0ae818194d0968b511a74d20ea6bd8.bindPopup(popup_5cd94fe904fa79155daf0b342c5f33ce)
+        ;
+
+        
+    
+    
+                marker_6d0ae818194d0968b511a74d20ea6bd8.setIcon(icon_35e828984fea6c82ca1a1af06b9f4be4);
+            
+    
+            var marker_d57d23fb4c1d07bf5b0b6ca67ca0fac8 = L.marker(
+                [28.69489620716741, 77.56964760880827],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c8215271caaaffc52390f9952e08099d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d90d0ced3b2898d4dd03fae4f3ea96ed = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_300ce511d6433a13616ec33698fc5838 = $(`<div id="html_300ce511d6433a13616ec33698fc5838" style="width: 100.0%; height: 100.0%;"><b>Village:</b> parson<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_d90d0ced3b2898d4dd03fae4f3ea96ed.setContent(html_300ce511d6433a13616ec33698fc5838);
+            
+        
+
+        marker_d57d23fb4c1d07bf5b0b6ca67ca0fac8.bindPopup(popup_d90d0ced3b2898d4dd03fae4f3ea96ed)
+        ;
+
+        
+    
+    
+                marker_d57d23fb4c1d07bf5b0b6ca67ca0fac8.setIcon(icon_c8215271caaaffc52390f9952e08099d);
+            
+    
+            var marker_eedc9c57ead182adc58d902375ddfc6a = L.marker(
+                [28.3671755584447, 77.55419343731182],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_e55f3f99c1439ea2144c4487c2c6b391 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc36e544021b835dcb5c409064fce90f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e2636fe93bfaf797326314e2b24531e = $(`<div id="html_6e2636fe93bfaf797326314e2b24531e" style="width: 100.0%; height: 100.0%;"><b>Village:</b> dankaur<br><b>Sub-District:</b> gautam buddha nagar<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_fc36e544021b835dcb5c409064fce90f.setContent(html_6e2636fe93bfaf797326314e2b24531e);
+            
+        
+
+        marker_eedc9c57ead182adc58d902375ddfc6a.bindPopup(popup_fc36e544021b835dcb5c409064fce90f)
+        ;
+
+        
+    
+    
+                marker_eedc9c57ead182adc58d902375ddfc6a.setIcon(icon_e55f3f99c1439ea2144c4487c2c6b391);
+            
+    
+            var marker_9dc108bc89de3ed678ebc0cf2473fde3 = L.marker(
+                [28.7808653825518, 77.50031115808751],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_79ee519e96d73c856b389af5caf970d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd6f191310986e9711e6caaa931e4755 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ad9ddee1ee180dea25662e9607f0796 = $(`<div id="html_6ad9ddee1ee180dea25662e9607f0796" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sarna murad nagar<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_fd6f191310986e9711e6caaa931e4755.setContent(html_6ad9ddee1ee180dea25662e9607f0796);
+            
+        
+
+        marker_9dc108bc89de3ed678ebc0cf2473fde3.bindPopup(popup_fd6f191310986e9711e6caaa931e4755)
+        ;
+
+        
+    
+    
+                marker_9dc108bc89de3ed678ebc0cf2473fde3.setIcon(icon_79ee519e96d73c856b389af5caf970d7);
+            
+    
+            var marker_b3bf7a5f239de781b30d3928fbcadd91 = L.marker(
+                [22.38207716746716, 88.42831190689454],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_93388735d41471e4b44b6a2903975e78 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f77aa942a63011987e72a718f5d0f27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0f9543d6f845a953ff840615007cd71a = $(`<div id="html_0f9543d6f845a953ff840615007cd71a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> dehimedan malla<br><b>Sub-District:</b> baruipur<br><b>District:</b> south twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.58</div>`)[0];
+                popup_1f77aa942a63011987e72a718f5d0f27.setContent(html_0f9543d6f845a953ff840615007cd71a);
+            
+        
+
+        marker_b3bf7a5f239de781b30d3928fbcadd91.bindPopup(popup_1f77aa942a63011987e72a718f5d0f27)
+        ;
+
+        
+    
+    
+                marker_b3bf7a5f239de781b30d3928fbcadd91.setIcon(icon_93388735d41471e4b44b6a2903975e78);
+            
+    
+            var marker_654adc9a27c481fbf1c2db7ae75e379d = L.marker(
+                [28.64792098470401, 77.59881244942706],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_26b4dc1caa9c88bc3c898b7e873b2ed1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8b2f7a51f6d007e53efaf77c7f68ac51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eab6dc04d139cc9f0fa0053e46cead2a = $(`<div id="html_eab6dc04d139cc9f0fa0053e46cead2a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> jadopur<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_8b2f7a51f6d007e53efaf77c7f68ac51.setContent(html_eab6dc04d139cc9f0fa0053e46cead2a);
+            
+        
+
+        marker_654adc9a27c481fbf1c2db7ae75e379d.bindPopup(popup_8b2f7a51f6d007e53efaf77c7f68ac51)
+        ;
+
+        
+    
+    
+                marker_654adc9a27c481fbf1c2db7ae75e379d.setIcon(icon_26b4dc1caa9c88bc3c898b7e873b2ed1);
+            
+    
+            var marker_d3f9ddd549dd2b3c593ce89db76689ad = L.marker(
+                [19.250339275579236, 73.09378786176826],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_705d7113dfc40160c582192214732306 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a7f3d27b9375536b0b67b3f39f653428 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_feefafdf81b92f1105955ce2513b7ab6 = $(`<div id="html_feefafdf81b92f1105955ce2513b7ab6" style="width: 100.0%; height: 100.0%;"><b>Village:</b> gove<br><b>Sub-District:</b> bhiwandi<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.58</div>`)[0];
+                popup_a7f3d27b9375536b0b67b3f39f653428.setContent(html_feefafdf81b92f1105955ce2513b7ab6);
+            
+        
+
+        marker_d3f9ddd549dd2b3c593ce89db76689ad.bindPopup(popup_a7f3d27b9375536b0b67b3f39f653428)
+        ;
+
+        
+    
+    
+                marker_d3f9ddd549dd2b3c593ce89db76689ad.setIcon(icon_705d7113dfc40160c582192214732306);
+            
+    
+            var marker_7f6a2c568092d5af023881256de0c867 = L.marker(
+                [28.471542934283352, 77.65825038521818],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c0442ea76535dda73d552eec71ea1a34 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_acc003f1d0a3ffa444b41facb79b8946 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f952a30190f3b0e78ba06d1d02024bb6 = $(`<div id="html_f952a30190f3b0e78ba06d1d02024bb6" style="width: 100.0%; height: 100.0%;"><b>Village:</b> jokhabad<br><b>Sub-District:</b> sikandrabad<br><b>District:</b> bulandshahr<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_acc003f1d0a3ffa444b41facb79b8946.setContent(html_f952a30190f3b0e78ba06d1d02024bb6);
+            
+        
+
+        marker_7f6a2c568092d5af023881256de0c867.bindPopup(popup_acc003f1d0a3ffa444b41facb79b8946)
+        ;
+
+        
+    
+    
+                marker_7f6a2c568092d5af023881256de0c867.setIcon(icon_c0442ea76535dda73d552eec71ea1a34);
+            
+    
+            var marker_b057517bef7d7060820eb2968b369f5d = L.marker(
+                [22.97326113514624, 88.49619234812303],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_25e0407730a0e69b4ec2c583a6e4e6ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a5d563494ef4c59f32e0887bea173c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bcd37dc1b42ac0fb4d85fd1eb699903c = $(`<div id="html_bcd37dc1b42ac0fb4d85fd1eb699903c" style="width: 100.0%; height: 100.0%;"><b>Village:</b> raghunathpur p<br><b>Sub-District:</b> chakdah<br><b>District:</b> nadia<br><b>State:</b> west bengal<br><b>Score:</b> 3.58</div>`)[0];
+                popup_3a5d563494ef4c59f32e0887bea173c2.setContent(html_bcd37dc1b42ac0fb4d85fd1eb699903c);
+            
+        
+
+        marker_b057517bef7d7060820eb2968b369f5d.bindPopup(popup_3a5d563494ef4c59f32e0887bea173c2)
+        ;
+
+        
+    
+    
+                marker_b057517bef7d7060820eb2968b369f5d.setIcon(icon_25e0407730a0e69b4ec2c583a6e4e6ca);
+            
+    
+            var marker_c67ac8a640e901417c6f85eda28531d2 = L.marker(
+                [28.5329710581993, 77.55007236099891],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_d4083226b70ae18eaabe0725d3e34042 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c48ee71e1a9f2112bad6a182aa2d1c44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_523a9a20503652146066e57e1fdf6922 = $(`<div id="html_523a9a20503652146066e57e1fdf6922" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kathhera<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_c48ee71e1a9f2112bad6a182aa2d1c44.setContent(html_523a9a20503652146066e57e1fdf6922);
+            
+        
+
+        marker_c67ac8a640e901417c6f85eda28531d2.bindPopup(popup_c48ee71e1a9f2112bad6a182aa2d1c44)
+        ;
+
+        
+    
+    
+                marker_c67ac8a640e901417c6f85eda28531d2.setIcon(icon_d4083226b70ae18eaabe0725d3e34042);
+            
+    
+            var marker_37c0f90394fd712022c5f14010b1c405 = L.marker(
+                [28.48959381447656, 77.65530926770018],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3a370119499ce5fb04c67e053525d199 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ef5c3e519ab5ab5b03ddde1aba750372 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2c91d94a8adb66c44032b653f7a13f5 = $(`<div id="html_d2c91d94a8adb66c44032b653f7a13f5" style="width: 100.0%; height: 100.0%;"><b>Village:</b> gopalpur<br><b>Sub-District:</b> sikandrabad<br><b>District:</b> bulandshahr<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.58</div>`)[0];
+                popup_ef5c3e519ab5ab5b03ddde1aba750372.setContent(html_d2c91d94a8adb66c44032b653f7a13f5);
+            
+        
+
+        marker_37c0f90394fd712022c5f14010b1c405.bindPopup(popup_ef5c3e519ab5ab5b03ddde1aba750372)
+        ;
+
+        
+    
+    
+                marker_37c0f90394fd712022c5f14010b1c405.setIcon(icon_3a370119499ce5fb04c67e053525d199);
+            
+    
+            var marker_e526196a756343712d2423b77ff0d38d = L.marker(
+                [22.73995635254882, 88.32141396216647],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_742d89073a242c00de0dc34510c7d6f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b2db4a8b90c0d6c1bf261254120f7c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0eb81818cd3cd9ed685165ab17ca80b5 = $(`<div id="html_0eb81818cd3cd9ed685165ab17ca80b5" style="width: 100.0%; height: 100.0%;"><b>Village:</b> simla<br><b>Sub-District:</b> serampur uttarpara<br><b>District:</b> hugli<br><b>State:</b> west bengal<br><b>Score:</b> 3.58</div>`)[0];
+                popup_0b2db4a8b90c0d6c1bf261254120f7c1.setContent(html_0eb81818cd3cd9ed685165ab17ca80b5);
+            
+        
+
+        marker_e526196a756343712d2423b77ff0d38d.bindPopup(popup_0b2db4a8b90c0d6c1bf261254120f7c1)
+        ;
+
+        
+    
+    
+                marker_e526196a756343712d2423b77ff0d38d.setIcon(icon_742d89073a242c00de0dc34510c7d6f7);
+            
+    
+            var marker_0aaf85c36c05daefc81c32427a5699e8 = L.marker(
+                [19.25791092623976, 73.01831432078735],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_0aaebaa113af30ed6c42d9e68bc0bb99 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4d023fb616d65fbb468c29bac9f2af0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_71c2f68dc9e1d073b6ce30863fcb385f = $(`<div id="html_71c2f68dc9e1d073b6ce30863fcb385f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kopar<br><b>Sub-District:</b> bhiwandi<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.58</div>`)[0];
+                popup_4d023fb616d65fbb468c29bac9f2af0e.setContent(html_71c2f68dc9e1d073b6ce30863fcb385f);
+            
+        
+
+        marker_0aaf85c36c05daefc81c32427a5699e8.bindPopup(popup_4d023fb616d65fbb468c29bac9f2af0e)
+        ;
+
+        
+    
+    
+                marker_0aaf85c36c05daefc81c32427a5699e8.setIcon(icon_0aaebaa113af30ed6c42d9e68bc0bb99);
+            
+    
+            var marker_69a195a2613cb93ad40852e62abd135a = L.marker(
+                [21.27584519336473, 72.95122959275194],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_84464912a371409f010dd211284addec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c93d42bd3b482defe31211fc9e6d05f9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a077daeafe9695cf5ca2f04af2751741 = $(`<div id="html_a077daeafe9695cf5ca2f04af2751741" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kholvad<br><b>Sub-District:</b> kamrej<br><b>District:</b> surat<br><b>State:</b> gujarat<br><b>Score:</b> 3.58</div>`)[0];
+                popup_c93d42bd3b482defe31211fc9e6d05f9.setContent(html_a077daeafe9695cf5ca2f04af2751741);
+            
+        
+
+        marker_69a195a2613cb93ad40852e62abd135a.bindPopup(popup_c93d42bd3b482defe31211fc9e6d05f9)
+        ;
+
+        
+    
+    
+                marker_69a195a2613cb93ad40852e62abd135a.setIcon(icon_84464912a371409f010dd211284addec);
+            
+    
+            var marker_360d3d4f5912eba46e70bac2db83d093 = L.marker(
+                [21.255352339278392, 72.94116391832218],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_a4f0c8c4e46c484ce16e89cf2349ed69 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e97fa276a785004dcc92e7fa590f032e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_857eb084fb638de33664c342da055408 = $(`<div id="html_857eb084fb638de33664c342da055408" style="width: 100.0%; height: 100.0%;"><b>Village:</b> laskana<br><b>Sub-District:</b> kamrej<br><b>District:</b> surat<br><b>State:</b> gujarat<br><b>Score:</b> 3.58</div>`)[0];
+                popup_e97fa276a785004dcc92e7fa590f032e.setContent(html_857eb084fb638de33664c342da055408);
+            
+        
+
+        marker_360d3d4f5912eba46e70bac2db83d093.bindPopup(popup_e97fa276a785004dcc92e7fa590f032e)
+        ;
+
+        
+    
+    
+                marker_360d3d4f5912eba46e70bac2db83d093.setIcon(icon_a4f0c8c4e46c484ce16e89cf2349ed69);
+            
+    
+            var marker_ef0cecca2cbf86d1da964c45bef63eb3 = L.marker(
+                [21.261057130404662, 72.96726993939387],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_51b420f312dceca386c42627a2e25936 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_517557eff2db54f6fe2f9d7ca58b2826 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb0d9bd2f30b2facfce8dc4e8c6b6838 = $(`<div id="html_fb0d9bd2f30b2facfce8dc4e8c6b6838" style="width: 100.0%; height: 100.0%;"><b>Village:</b> navagam<br><b>Sub-District:</b> kamrej<br><b>District:</b> surat<br><b>State:</b> gujarat<br><b>Score:</b> 3.58</div>`)[0];
+                popup_517557eff2db54f6fe2f9d7ca58b2826.setContent(html_fb0d9bd2f30b2facfce8dc4e8c6b6838);
+            
+        
+
+        marker_ef0cecca2cbf86d1da964c45bef63eb3.bindPopup(popup_517557eff2db54f6fe2f9d7ca58b2826)
+        ;
+
+        
+    
+    
+                marker_ef0cecca2cbf86d1da964c45bef63eb3.setIcon(icon_51b420f312dceca386c42627a2e25936);
+            
+    
+            var marker_df52b8ff4771507bfb72b82b5078c26e = L.marker(
+                [21.27755754262476, 72.97961716475182],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_4f01b705f535b4ddc44af2dd4e9bfcae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7d1ddfb4a1a1656e4fc9c4c408f8676f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2bd16d70e9f5ad9fe5f0a6b9e2380751 = $(`<div id="html_2bd16d70e9f5ad9fe5f0a6b9e2380751" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kamrej<br><b>Sub-District:</b> kamrej<br><b>District:</b> surat<br><b>State:</b> gujarat<br><b>Score:</b> 3.58</div>`)[0];
+                popup_7d1ddfb4a1a1656e4fc9c4c408f8676f.setContent(html_2bd16d70e9f5ad9fe5f0a6b9e2380751);
+            
+        
+
+        marker_df52b8ff4771507bfb72b82b5078c26e.bindPopup(popup_7d1ddfb4a1a1656e4fc9c4c408f8676f)
+        ;
+
+        
+    
+    
+                marker_df52b8ff4771507bfb72b82b5078c26e.setIcon(icon_4f01b705f535b4ddc44af2dd4e9bfcae);
+            
+    
+            var marker_5a0e2a16716f03e2e1197cdd70a3d5af = L.marker(
+                [21.09691027289261, 72.64489915708103],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_7efb3ba232e954231da010ce575a8b29 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2bf38b8da2fb67085f1ab4efc9c3c200 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6458c881ac326bccdbdf8496583e734d = $(`<div id="html_6458c881ac326bccdbdf8496583e734d" style="width: 100.0%; height: 100.0%;"><b>Village:</b> hajira<br><b>Sub-District:</b> chorasi<br><b>District:</b> surat<br><b>State:</b> gujarat<br><b>Score:</b> 3.58</div>`)[0];
+                popup_2bf38b8da2fb67085f1ab4efc9c3c200.setContent(html_6458c881ac326bccdbdf8496583e734d);
+            
+        
+
+        marker_5a0e2a16716f03e2e1197cdd70a3d5af.bindPopup(popup_2bf38b8da2fb67085f1ab4efc9c3c200)
+        ;
+
+        
+    
+    
+                marker_5a0e2a16716f03e2e1197cdd70a3d5af.setIcon(icon_7efb3ba232e954231da010ce575a8b29);
+            
+    
+            var marker_b8c02b36d972eb4e520b38a952b62550 = L.marker(
+                [28.610711042720705, 77.49689648565385],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_853b35fd97ef58788bc45b434b5bd7c8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dd5b5c2e8665bfa7bd694bbc99e3d3b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_abe22549c1168b94967c164604204b2f = $(`<div id="html_abe22549c1168b94967c164604204b2f" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bisnoli<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.57</div>`)[0];
+                popup_dd5b5c2e8665bfa7bd694bbc99e3d3b3.setContent(html_abe22549c1168b94967c164604204b2f);
+            
+        
+
+        marker_b8c02b36d972eb4e520b38a952b62550.bindPopup(popup_dd5b5c2e8665bfa7bd694bbc99e3d3b3)
+        ;
+
+        
+    
+    
+                marker_b8c02b36d972eb4e520b38a952b62550.setIcon(icon_853b35fd97ef58788bc45b434b5bd7c8);
+            
+    
+            var marker_8cd05f188b945bccdb92ac1f87aa3816 = L.marker(
+                [22.714830946036127, 88.27365368533997],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_b72eab27f5b80d390b360f6e062f39ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e92b41ea27e6b10c4e264082bfd9bab5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c8b181cc2dbb17dc1ae969ba80886f05 = $(`<div id="html_c8b181cc2dbb17dc1ae969ba80886f05" style="width: 100.0%; height: 100.0%;"><b>Village:</b> danpatipur<br><b>Sub-District:</b> chanditala-2<br><b>District:</b> hugli<br><b>State:</b> west bengal<br><b>Score:</b> 3.57</div>`)[0];
+                popup_e92b41ea27e6b10c4e264082bfd9bab5.setContent(html_c8b181cc2dbb17dc1ae969ba80886f05);
+            
+        
+
+        marker_8cd05f188b945bccdb92ac1f87aa3816.bindPopup(popup_e92b41ea27e6b10c4e264082bfd9bab5)
+        ;
+
+        
+    
+    
+                marker_8cd05f188b945bccdb92ac1f87aa3816.setIcon(icon_b72eab27f5b80d390b360f6e062f39ac);
+            
+    
+            var marker_a763a373b1301f902d188de9a9d816cf = L.marker(
+                [28.630104286131203, 77.488906951879],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_ab90f3893461870b919d274bd49f6b61 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_94ef117aaf6d10a2b37611557d4027d3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8207d352ac6fe2e2bc5707638480d44a = $(`<div id="html_8207d352ac6fe2e2bc5707638480d44a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> girdharpur sunarasi<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.57</div>`)[0];
+                popup_94ef117aaf6d10a2b37611557d4027d3.setContent(html_8207d352ac6fe2e2bc5707638480d44a);
+            
+        
+
+        marker_a763a373b1301f902d188de9a9d816cf.bindPopup(popup_94ef117aaf6d10a2b37611557d4027d3)
+        ;
+
+        
+    
+    
+                marker_a763a373b1301f902d188de9a9d816cf.setIcon(icon_ab90f3893461870b919d274bd49f6b61);
+            
+    
+            var marker_463a2a5e480ec8accff837f8c3cda0f8 = L.marker(
+                [18.87213653210593, 72.9640318826022],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_0d564e42e0d1313152317b8dae69d365 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd94dfe7a595273714853b2efa251d01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4e595bb3f54cc1b3547d58a229698f87 = $(`<div id="html_4e595bb3f54cc1b3547d58a229698f87" style="width: 100.0%; height: 100.0%;"><b>Village:</b> navin sheva<br><b>Sub-District:</b> uran<br><b>District:</b> raigarh<br><b>State:</b> maharashtra<br><b>Score:</b> 3.57</div>`)[0];
+                popup_bd94dfe7a595273714853b2efa251d01.setContent(html_4e595bb3f54cc1b3547d58a229698f87);
+            
+        
+
+        marker_463a2a5e480ec8accff837f8c3cda0f8.bindPopup(popup_bd94dfe7a595273714853b2efa251d01)
+        ;
+
+        
+    
+    
+                marker_463a2a5e480ec8accff837f8c3cda0f8.setIcon(icon_0d564e42e0d1313152317b8dae69d365);
+            
+    
+            var marker_a89dd04c6fad3e501c6889620151f84b = L.marker(
+                [22.59980912929662, 88.24090270823494],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_804cbce9c35b0fa4efe6c31370e37987 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_752b2a542db79457a2e7ef42bc2b14b5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cd8e4ec3e8c6eb93c5e2730b1f25dfa2 = $(`<div id="html_cd8e4ec3e8c6eb93c5e2730b1f25dfa2" style="width: 100.0%; height: 100.0%;"><b>Village:</b> prasastha<br><b>Sub-District:</b> domjur<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.57</div>`)[0];
+                popup_752b2a542db79457a2e7ef42bc2b14b5.setContent(html_cd8e4ec3e8c6eb93c5e2730b1f25dfa2);
+            
+        
+
+        marker_a89dd04c6fad3e501c6889620151f84b.bindPopup(popup_752b2a542db79457a2e7ef42bc2b14b5)
+        ;
+
+        
+    
+    
+                marker_a89dd04c6fad3e501c6889620151f84b.setIcon(icon_804cbce9c35b0fa4efe6c31370e37987);
+            
+    
+            var marker_38f59c63da900385e99451fb86e4671d = L.marker(
+                [28.55928229625291, 77.52308271673196],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_60d86a24ddc5ead495ebdafad5e09f47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7f703be6406db4d0a05f4aca9ec70a8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a5ec7761c7beae588974deb0aa42f9ae = $(`<div id="html_a5ec7761c7beae588974deb0aa42f9ae" style="width: 100.0%; height: 100.0%;"><b>Village:</b> amka<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.57</div>`)[0];
+                popup_7f703be6406db4d0a05f4aca9ec70a8d.setContent(html_a5ec7761c7beae588974deb0aa42f9ae);
+            
+        
+
+        marker_38f59c63da900385e99451fb86e4671d.bindPopup(popup_7f703be6406db4d0a05f4aca9ec70a8d)
+        ;
+
+        
+    
+    
+                marker_38f59c63da900385e99451fb86e4671d.setIcon(icon_60d86a24ddc5ead495ebdafad5e09f47);
+            
+    
+            var marker_b523a7c59183f50cea08fa029c754b62 = L.marker(
+                [28.59805741076261, 77.47039881033847],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_6f2e886f27e6670cecd2d70332fe0077 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30eacc656ad7835c325013c74e44c2eb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_421b237a4a50f5f8260aff98dd921878 = $(`<div id="html_421b237a4a50f5f8260aff98dd921878" style="width: 100.0%; height: 100.0%;"><b>Village:</b> roza jalalpur<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.57</div>`)[0];
+                popup_30eacc656ad7835c325013c74e44c2eb.setContent(html_421b237a4a50f5f8260aff98dd921878);
+            
+        
+
+        marker_b523a7c59183f50cea08fa029c754b62.bindPopup(popup_30eacc656ad7835c325013c74e44c2eb)
+        ;
+
+        
+    
+    
+                marker_b523a7c59183f50cea08fa029c754b62.setIcon(icon_6f2e886f27e6670cecd2d70332fe0077);
+            
+    
+            var marker_041b4ce61706af8391c7cebdee3801c9 = L.marker(
+                [28.68040787281985, 77.60387087389982],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_1518e086118503131ba35686d60f171d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b42916b41c1cade3b7194c43e9634f06 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2cc9ee2a0eab9a643469d7527115d4f0 = $(`<div id="html_2cc9ee2a0eab9a643469d7527115d4f0" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bhovapur<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.57</div>`)[0];
+                popup_b42916b41c1cade3b7194c43e9634f06.setContent(html_2cc9ee2a0eab9a643469d7527115d4f0);
+            
+        
+
+        marker_041b4ce61706af8391c7cebdee3801c9.bindPopup(popup_b42916b41c1cade3b7194c43e9634f06)
+        ;
+
+        
+    
+    
+                marker_041b4ce61706af8391c7cebdee3801c9.setIcon(icon_1518e086118503131ba35686d60f171d);
+            
+    
+            var marker_0a66317eaa5a4002fd8665f039689156 = L.marker(
+                [19.262061772117065, 73.04089647350068],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_a06200c224d5e0e3bac22a97ea807f18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a492c721c421b40d3f8b95df4f7f325 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce2a77a232bbff60fcbfa90b6485c5e2 = $(`<div id="html_ce2a77a232bbff60fcbfa90b6485c5e2" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kailasnagar<br><b>Sub-District:</b> bhiwandi<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.57</div>`)[0];
+                popup_1a492c721c421b40d3f8b95df4f7f325.setContent(html_ce2a77a232bbff60fcbfa90b6485c5e2);
+            
+        
+
+        marker_0a66317eaa5a4002fd8665f039689156.bindPopup(popup_1a492c721c421b40d3f8b95df4f7f325)
+        ;
+
+        
+    
+    
+                marker_0a66317eaa5a4002fd8665f039689156.setIcon(icon_a06200c224d5e0e3bac22a97ea807f18);
+            
+    
+            var marker_3fd646a3f34843250409504ffd53075c = L.marker(
+                [28.37696580099317, 77.0372610928335],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_3641b9b4e2d42000dd91a1f2e5ef7e77 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c46d66af9f89287aafc7e2dd627feec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aea10dfedf44cf65853694af8521e4b1 = $(`<div id="html_aea10dfedf44cf65853694af8521e4b1" style="width: 100.0%; height: 100.0%;"><b>Village:</b> nurpur jharsa<br><b>Sub-District:</b> gurgaon<br><b>District:</b> gurgaon<br><b>State:</b> haryana<br><b>Score:</b> 3.57</div>`)[0];
+                popup_0c46d66af9f89287aafc7e2dd627feec.setContent(html_aea10dfedf44cf65853694af8521e4b1);
+            
+        
+
+        marker_3fd646a3f34843250409504ffd53075c.bindPopup(popup_0c46d66af9f89287aafc7e2dd627feec)
+        ;
+
+        
+    
+    
+                marker_3fd646a3f34843250409504ffd53075c.setIcon(icon_3641b9b4e2d42000dd91a1f2e5ef7e77);
+            
+    
+            var marker_c004adc470bf7550533679d924bce9de = L.marker(
+                [28.78267417508892, 77.27521036688371],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_10eaa4a831202d280c4a588067e3c7d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_250fd1a057b4d5329218a35141fc002f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4fc2f4da1884ee8da6bdd6e856674ddc = $(`<div id="html_4fc2f4da1884ee8da6bdd6e856674ddc" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sadabad durgavali<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_250fd1a057b4d5329218a35141fc002f.setContent(html_4fc2f4da1884ee8da6bdd6e856674ddc);
+            
+        
+
+        marker_c004adc470bf7550533679d924bce9de.bindPopup(popup_250fd1a057b4d5329218a35141fc002f)
+        ;
+
+        
+    
+    
+                marker_c004adc470bf7550533679d924bce9de.setIcon(icon_10eaa4a831202d280c4a588067e3c7d5);
+            
+    
+            var marker_a5cc2603cc7a10a3d882918ec2b201fa = L.marker(
+                [29.222680173012257, 77.00437238000687],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_5f5dfe1184f4484d877840268a4c6ba6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_af7c10fdb1acbbadd21155fe30b45236 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e51e70f69dae0324c40629c9b768d785 = $(`<div id="html_e51e70f69dae0324c40629c9b768d785" style="width: 100.0%; height: 100.0%;"><b>Village:</b> samalkha rural<br><b>Sub-District:</b> samalkha<br><b>District:</b> panipat<br><b>State:</b> haryana<br><b>Score:</b> 3.56</div>`)[0];
+                popup_af7c10fdb1acbbadd21155fe30b45236.setContent(html_e51e70f69dae0324c40629c9b768d785);
+            
+        
+
+        marker_a5cc2603cc7a10a3d882918ec2b201fa.bindPopup(popup_af7c10fdb1acbbadd21155fe30b45236)
+        ;
+
+        
+    
+    
+                marker_a5cc2603cc7a10a3d882918ec2b201fa.setIcon(icon_5f5dfe1184f4484d877840268a4c6ba6);
+            
+    
+            var marker_a19efbbdb0f08746220140e828cd0ee1 = L.marker(
+                [22.96956374114328, 88.40302949144603],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_0bede122267d422d3effcc5439196a39 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c446d9f43d9e6497ed5f07ee44057fe9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d726454001a87bbc1a5b99dfa78d1ebc = $(`<div id="html_d726454001a87bbc1a5b99dfa78d1ebc" style="width: 100.0%; height: 100.0%;"><b>Village:</b> bansberia p<br><b>Sub-District:</b> chinsurah magra<br><b>District:</b> hugli<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_c446d9f43d9e6497ed5f07ee44057fe9.setContent(html_d726454001a87bbc1a5b99dfa78d1ebc);
+            
+        
+
+        marker_a19efbbdb0f08746220140e828cd0ee1.bindPopup(popup_c446d9f43d9e6497ed5f07ee44057fe9)
+        ;
+
+        
+    
+    
+                marker_a19efbbdb0f08746220140e828cd0ee1.setIcon(icon_0bede122267d422d3effcc5439196a39);
+            
+    
+            var marker_ec207084599eb04af31689c214f9ddfb = L.marker(
+                [28.358981600895063, 76.93269965647313],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_fc26dd4c8f5a132b8837f902e63aae50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_00bea4a9173d23fa1298ebfbece738ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0d598f319d79d16e73de7a69e6d917ec = $(`<div id="html_0d598f319d79d16e73de7a69e6d917ec" style="width: 100.0%; height: 100.0%;"><b>Village:</b> khoh<br><b>Sub-District:</b> manesar<br><b>District:</b> gurgaon<br><b>State:</b> haryana<br><b>Score:</b> 3.56</div>`)[0];
+                popup_00bea4a9173d23fa1298ebfbece738ec.setContent(html_0d598f319d79d16e73de7a69e6d917ec);
+            
+        
+
+        marker_ec207084599eb04af31689c214f9ddfb.bindPopup(popup_00bea4a9173d23fa1298ebfbece738ec)
+        ;
+
+        
+    
+    
+                marker_ec207084599eb04af31689c214f9ddfb.setIcon(icon_fc26dd4c8f5a132b8837f902e63aae50);
+            
+    
+            var marker_f1a6fdefbd36d5a2a334abd2e884719d = L.marker(
+                [22.549106508160992, 88.15168429622501],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_5ba42d6f9267253045ecd702710ff706 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b360421a151b956d9362789ed0c538b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9b2334d831149749152cf92c8810878 = $(`<div id="html_b9b2334d831149749152cf92c8810878" style="width: 100.0%; height: 100.0%;"><b>Village:</b> kulai<br><b>Sub-District:</b> panchla<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_5b360421a151b956d9362789ed0c538b.setContent(html_b9b2334d831149749152cf92c8810878);
+            
+        
+
+        marker_f1a6fdefbd36d5a2a334abd2e884719d.bindPopup(popup_5b360421a151b956d9362789ed0c538b)
+        ;
+
+        
+    
+    
+                marker_f1a6fdefbd36d5a2a334abd2e884719d.setIcon(icon_5ba42d6f9267253045ecd702710ff706);
+            
+    
+            var marker_cd70c577db7808b44778cf47b1bf44f9 = L.marker(
+                [28.78771653154324, 77.24900365750216],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_6dd1d249ba30c1b550cb9ea0b9d6ddaa = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f2ebcf75c282a70e9408dd7fc60fcf71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1948b2cb12fb1417402269ea0edaa94 = $(`<div id="html_c1948b2cb12fb1417402269ea0edaa94" style="width: 100.0%; height: 100.0%;"><b>Village:</b> lutfulapur navada<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_f2ebcf75c282a70e9408dd7fc60fcf71.setContent(html_c1948b2cb12fb1417402269ea0edaa94);
+            
+        
+
+        marker_cd70c577db7808b44778cf47b1bf44f9.bindPopup(popup_f2ebcf75c282a70e9408dd7fc60fcf71)
+        ;
+
+        
+    
+    
+                marker_cd70c577db7808b44778cf47b1bf44f9.setIcon(icon_6dd1d249ba30c1b550cb9ea0b9d6ddaa);
+            
+    
+            var marker_03bf835acbeb0fd28badeb107b6482f7 = L.marker(
+                [19.323115951339545, 73.07979923648122],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_c74278a01c0e996bb41fad413225477e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_486f3ca4a6b4a7b105576090a8998035 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c699ac8db669ff7224fe6fa304b2e826 = $(`<div id="html_c699ac8db669ff7224fe6fa304b2e826" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sawandhe<br><b>Sub-District:</b> bhiwandi<br><b>District:</b> thane<br><b>State:</b> maharashtra<br><b>Score:</b> 3.56</div>`)[0];
+                popup_486f3ca4a6b4a7b105576090a8998035.setContent(html_c699ac8db669ff7224fe6fa304b2e826);
+            
+        
+
+        marker_03bf835acbeb0fd28badeb107b6482f7.bindPopup(popup_486f3ca4a6b4a7b105576090a8998035)
+        ;
+
+        
+    
+    
+                marker_03bf835acbeb0fd28badeb107b6482f7.setIcon(icon_c74278a01c0e996bb41fad413225477e);
+            
+    
+            var marker_00f4107f451155169a8489e41a65d829 = L.marker(
+                [28.61439169147718, 77.43758343169655],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_65bac6becc8230a2bc5a4fbc5a0fac1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_73989a7c4fd02fdf98856bd86f2e3ab6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9ecf257946e74700ac7d03fd9a10cf36 = $(`<div id="html_9ecf257946e74700ac7d03fd9a10cf36" style="width: 100.0%; height: 100.0%;"><b>Village:</b> shah beri<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_73989a7c4fd02fdf98856bd86f2e3ab6.setContent(html_9ecf257946e74700ac7d03fd9a10cf36);
+            
+        
+
+        marker_00f4107f451155169a8489e41a65d829.bindPopup(popup_73989a7c4fd02fdf98856bd86f2e3ab6)
+        ;
+
+        
+    
+    
+                marker_00f4107f451155169a8489e41a65d829.setIcon(icon_65bac6becc8230a2bc5a4fbc5a0fac1e);
+            
+    
+            var marker_483448b5e055a3c10e5b95c19838b75d = L.marker(
+                [22.615294449798263, 88.23590723874376],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_59ead621ca567ce8aa645612397ebf5e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cd1c3a437148681dfa00f0b425a0ec44 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bad504ad105d6f9fc6828c7295426131 = $(`<div id="html_bad504ad105d6f9fc6828c7295426131" style="width: 100.0%; height: 100.0%;"><b>Village:</b> purbba naopara<br><b>Sub-District:</b> domjur<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_cd1c3a437148681dfa00f0b425a0ec44.setContent(html_bad504ad105d6f9fc6828c7295426131);
+            
+        
+
+        marker_483448b5e055a3c10e5b95c19838b75d.bindPopup(popup_cd1c3a437148681dfa00f0b425a0ec44)
+        ;
+
+        
+    
+    
+                marker_483448b5e055a3c10e5b95c19838b75d.setIcon(icon_59ead621ca567ce8aa645612397ebf5e);
+            
+    
+            var marker_727537693db79fa26f847cdbe30dd562 = L.marker(
+                [28.5850862010721, 77.50635723465211],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_e5dfbfdbda28a9055a367a30a1b8d8d6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_28320d26db41ff6b87274523def28d81 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_843256f177503f808f1a69b4cfd4b022 = $(`<div id="html_843256f177503f808f1a69b4cfd4b022" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sadhopur<br><b>Sub-District:</b> dadri<br><b>District:</b> gautam buddha nagar<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_28320d26db41ff6b87274523def28d81.setContent(html_843256f177503f808f1a69b4cfd4b022);
+            
+        
+
+        marker_727537693db79fa26f847cdbe30dd562.bindPopup(popup_28320d26db41ff6b87274523def28d81)
+        ;
+
+        
+    
+    
+                marker_727537693db79fa26f847cdbe30dd562.setIcon(icon_e5dfbfdbda28a9055a367a30a1b8d8d6);
+            
+    
+            var marker_da55d4b75c3a3552741156aef2240758 = L.marker(
+                [22.98175749649753, 88.40334747601766],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_826b08885187b487562cd7bbb5c73cd7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e1f446cb9874517eb7f15b28087ee75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2f0e7cbcf636be0050a24eb38e7541e = $(`<div id="html_d2f0e7cbcf636be0050a24eb38e7541e" style="width: 100.0%; height: 100.0%;"><b>Village:</b> jatrasudi<br><b>Sub-District:</b> chinsurah magra<br><b>District:</b> hugli<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_3e1f446cb9874517eb7f15b28087ee75.setContent(html_d2f0e7cbcf636be0050a24eb38e7541e);
+            
+        
+
+        marker_da55d4b75c3a3552741156aef2240758.bindPopup(popup_3e1f446cb9874517eb7f15b28087ee75)
+        ;
+
+        
+    
+    
+                marker_da55d4b75c3a3552741156aef2240758.setIcon(icon_826b08885187b487562cd7bbb5c73cd7);
+            
+    
+            var marker_8e1c8dce5b04453233932e8afb912e77 = L.marker(
+                [28.701274889907523, 77.66850633159116],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_84ee8b5a7ed6f7e525af3c6932ceaeb8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d4bb0a8966bf2f33b14a0b64ad4f322 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bf0b235f2706c522bd397792186c97ed = $(`<div id="html_bf0b235f2706c522bd397792186c97ed" style="width: 100.0%; height: 100.0%;"><b>Village:</b> pilkhua dehat<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_0d4bb0a8966bf2f33b14a0b64ad4f322.setContent(html_bf0b235f2706c522bd397792186c97ed);
+            
+        
+
+        marker_8e1c8dce5b04453233932e8afb912e77.bindPopup(popup_0d4bb0a8966bf2f33b14a0b64ad4f322)
+        ;
+
+        
+    
+    
+                marker_8e1c8dce5b04453233932e8afb912e77.setIcon(icon_84ee8b5a7ed6f7e525af3c6932ceaeb8);
+            
+    
+            var marker_92c63d597fa256a0ece4e2f8cf9f15f0 = L.marker(
+                [28.483309782567467, 77.66344764441203],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_cbdb6e2c1270156bbe0cd3c9801cd142 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab3c32cd85762949c91358890ca8a6b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9e13a5b39d86798ea646ef841c2f047 = $(`<div id="html_b9e13a5b39d86798ea646ef841c2f047" style="width: 100.0%; height: 100.0%;"><b>Village:</b> rajarampur<br><b>Sub-District:</b> sikandrabad<br><b>District:</b> bulandshahr<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_ab3c32cd85762949c91358890ca8a6b3.setContent(html_b9e13a5b39d86798ea646ef841c2f047);
+            
+        
+
+        marker_92c63d597fa256a0ece4e2f8cf9f15f0.bindPopup(popup_ab3c32cd85762949c91358890ca8a6b3)
+        ;
+
+        
+    
+    
+                marker_92c63d597fa256a0ece4e2f8cf9f15f0.setIcon(icon_cbdb6e2c1270156bbe0cd3c9801cd142);
+            
+    
+            var marker_703f31ea1c717d68b57b2776c116d399 = L.marker(
+                [28.412153147702004, 77.04951875682012],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_f073bec0debe115bd9e6d5192d862a50 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9cc13ec6e3d041e71437d8ff968eca76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3ec6d5b334abdbe1cca2b9b516b6f3cb = $(`<div id="html_3ec6d5b334abdbe1cca2b9b516b6f3cb" style="width: 100.0%; height: 100.0%;"><b>Village:</b> ghasula -88 part<br><b>Sub-District:</b> gurgaon<br><b>District:</b> gurgaon<br><b>State:</b> haryana<br><b>Score:</b> 3.56</div>`)[0];
+                popup_9cc13ec6e3d041e71437d8ff968eca76.setContent(html_3ec6d5b334abdbe1cca2b9b516b6f3cb);
+            
+        
+
+        marker_703f31ea1c717d68b57b2776c116d399.bindPopup(popup_9cc13ec6e3d041e71437d8ff968eca76)
+        ;
+
+        
+    
+    
+                marker_703f31ea1c717d68b57b2776c116d399.setIcon(icon_f073bec0debe115bd9e6d5192d862a50);
+            
+    
+            var marker_fc02f31b7920629c397e950da03db84a = L.marker(
+                [22.70614383012632, 88.43081207227803],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_db184f5554f2534b14f54664f287b2cd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2f91f006ef993894d06d27bb38f0aaf5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b8ead00dc68d846489b3deb7a8c531de = $(`<div id="html_b8ead00dc68d846489b3deb7a8c531de" style="width: 100.0%; height: 100.0%;"><b>Village:</b> badai<br><b>Sub-District:</b> barrackpur-2<br><b>District:</b> north twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_2f91f006ef993894d06d27bb38f0aaf5.setContent(html_b8ead00dc68d846489b3deb7a8c531de);
+            
+        
+
+        marker_fc02f31b7920629c397e950da03db84a.bindPopup(popup_2f91f006ef993894d06d27bb38f0aaf5)
+        ;
+
+        
+    
+    
+                marker_fc02f31b7920629c397e950da03db84a.setIcon(icon_db184f5554f2534b14f54664f287b2cd);
+            
+    
+            var marker_40f87aaa546b5abdef609792ea30384c = L.marker(
+                [28.753747795759068, 77.49234345785881],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_fa3cb6f0f0c9b4ec2ed5debe0554dac8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ec4518f6b459b527b90778b6a57b501e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac24c428589b3243e46551d6a84c45fc = $(`<div id="html_ac24c428589b3243e46551d6a84c45fc" style="width: 100.0%; height: 100.0%;"><b>Village:</b> asalat nagar<br><b>Sub-District:</b> modinagar<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_ec4518f6b459b527b90778b6a57b501e.setContent(html_ac24c428589b3243e46551d6a84c45fc);
+            
+        
+
+        marker_40f87aaa546b5abdef609792ea30384c.bindPopup(popup_ec4518f6b459b527b90778b6a57b501e)
+        ;
+
+        
+    
+    
+                marker_40f87aaa546b5abdef609792ea30384c.setIcon(icon_fa3cb6f0f0c9b4ec2ed5debe0554dac8);
+            
+    
+            var marker_c3f9b25c9b46e6b2246a6f710cbd99c8 = L.marker(
+                [28.69640561217605, 77.50903747644365],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_e853070513fd706611fe1d862c727e5b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ae86b221abe0eb3721848c016cb8b2c7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4353ddbc7d83c76098fab8d00cd3d48e = $(`<div id="html_4353ddbc7d83c76098fab8d00cd3d48e" style="width: 100.0%; height: 100.0%;"><b>Village:</b> rasulpur sikrod<br><b>Sub-District:</b> ghaziabad<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.56</div>`)[0];
+                popup_ae86b221abe0eb3721848c016cb8b2c7.setContent(html_4353ddbc7d83c76098fab8d00cd3d48e);
+            
+        
+
+        marker_c3f9b25c9b46e6b2246a6f710cbd99c8.bindPopup(popup_ae86b221abe0eb3721848c016cb8b2c7)
+        ;
+
+        
+    
+    
+                marker_c3f9b25c9b46e6b2246a6f710cbd99c8.setIcon(icon_e853070513fd706611fe1d862c727e5b);
+            
+    
+            var marker_ed02880f50fb5a092a895013773b31bb = L.marker(
+                [22.59391031896859, 88.2060296417396],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_14dad135fa5cd46d820608a41afff7bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_764b28cfb01651b0a3e7b8eb1c28d825 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d44f76cc5c90b6d30f5b431f86329ccf = $(`<div id="html_d44f76cc5c90b6d30f5b431f86329ccf" style="width: 100.0%; height: 100.0%;"><b>Village:</b> sankharidaha<br><b>Sub-District:</b> domjur<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.56</div>`)[0];
+                popup_764b28cfb01651b0a3e7b8eb1c28d825.setContent(html_d44f76cc5c90b6d30f5b431f86329ccf);
+            
+        
+
+        marker_ed02880f50fb5a092a895013773b31bb.bindPopup(popup_764b28cfb01651b0a3e7b8eb1c28d825)
+        ;
+
+        
+    
+    
+                marker_ed02880f50fb5a092a895013773b31bb.setIcon(icon_14dad135fa5cd46d820608a41afff7bd);
+            
+    
+            var marker_6c9eb7985ba7d1607bb586779c779219 = L.marker(
+                [28.704184188331755, 77.63770808912507],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_ea171eafd04590c644cb9ff2c5cf5285 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fed863868e7ef296a6902fba5ab711a2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5f0000b73ad3778737cba5485891540 = $(`<div id="html_d5f0000b73ad3778737cba5485891540" style="width: 100.0%; height: 100.0%;"><b>Village:</b> khera<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.55</div>`)[0];
+                popup_fed863868e7ef296a6902fba5ab711a2.setContent(html_d5f0000b73ad3778737cba5485891540);
+            
+        
+
+        marker_6c9eb7985ba7d1607bb586779c779219.bindPopup(popup_fed863868e7ef296a6902fba5ab711a2)
+        ;
+
+        
+    
+    
+                marker_6c9eb7985ba7d1607bb586779c779219.setIcon(icon_ea171eafd04590c644cb9ff2c5cf5285);
+            
+    
+            var marker_92acd8c06af8106857341bce9f12532e = L.marker(
+                [22.580984513265573, 88.21412366607176],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_fe03d09f636c80a0e085fef3274ddbde = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_23a759733e3a482a39899739951bcac3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49442717184b22ab6612a599f706a08a = $(`<div id="html_49442717184b22ab6612a599f706a08a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> alampur<br><b>Sub-District:</b> sankrail<br><b>District:</b> haora<br><b>State:</b> west bengal<br><b>Score:</b> 3.55</div>`)[0];
+                popup_23a759733e3a482a39899739951bcac3.setContent(html_49442717184b22ab6612a599f706a08a);
+            
+        
+
+        marker_92acd8c06af8106857341bce9f12532e.bindPopup(popup_23a759733e3a482a39899739951bcac3)
+        ;
+
+        
+    
+    
+                marker_92acd8c06af8106857341bce9f12532e.setIcon(icon_fe03d09f636c80a0e085fef3274ddbde);
+            
+    
+            var marker_cd067563508c0eed472436457fad01fe = L.marker(
+                [22.45622696877802, 88.30713852339007],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_1b11adb05e26a578d4683b1230bd0738 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e69c146692e516b4cfa1b57cc64582ec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4cb6ddf3e723c1211aa3d3f270c0b179 = $(`<div id="html_4cb6ddf3e723c1211aa3d3f270c0b179" style="width: 100.0%; height: 100.0%;"><b>Village:</b> purba barisha<br><b>Sub-District:</b> thakurpukur mahestola<br><b>District:</b> south twenty four parganas<br><b>State:</b> west bengal<br><b>Score:</b> 3.55</div>`)[0];
+                popup_e69c146692e516b4cfa1b57cc64582ec.setContent(html_4cb6ddf3e723c1211aa3d3f270c0b179);
+            
+        
+
+        marker_cd067563508c0eed472436457fad01fe.bindPopup(popup_e69c146692e516b4cfa1b57cc64582ec)
+        ;
+
+        
+    
+    
+                marker_cd067563508c0eed472436457fad01fe.setIcon(icon_1b11adb05e26a578d4683b1230bd0738);
+            
+    
+            var marker_9fd5744e833713d8cf094141ce59cb1c = L.marker(
+                [28.720371122534758, 77.67928416886657],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_0846be632cebe3f0afeeba231e97f890 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f74818cd9aeb4d91a5f068177c69959e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_893aee305be812c5c000175ac8f80566 = $(`<div id="html_893aee305be812c5c000175ac8f80566" style="width: 100.0%; height: 100.0%;"><b>Village:</b> pipla bandpur<br><b>Sub-District:</b> hapur<br><b>District:</b> ghaziabad<br><b>State:</b> uttar pradesh<br><b>Score:</b> 3.55</div>`)[0];
+                popup_f74818cd9aeb4d91a5f068177c69959e.setContent(html_893aee305be812c5c000175ac8f80566);
+            
+        
+
+        marker_9fd5744e833713d8cf094141ce59cb1c.bindPopup(popup_f74818cd9aeb4d91a5f068177c69959e)
+        ;
+
+        
+    
+    
+                marker_9fd5744e833713d8cf094141ce59cb1c.setIcon(icon_0846be632cebe3f0afeeba231e97f890);
+            
+    
+            var marker_bc3fdb315ae9b4df827d869c39e93292 = L.marker(
+                [28.393632159795374, 77.07454728004542],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_e33f03c43c1f8bf6de5eecf63ced078c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f675cac3c04926f336111f5a2d054adf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c881d8ba843fa53c459cdf9d90170478 = $(`<div id="html_c881d8ba843fa53c459cdf9d90170478" style="width: 100.0%; height: 100.0%;"><b>Village:</b> medawas<br><b>Sub-District:</b> gurgaon<br><b>District:</b> gurgaon<br><b>State:</b> haryana<br><b>Score:</b> 3.55</div>`)[0];
+                popup_f675cac3c04926f336111f5a2d054adf.setContent(html_c881d8ba843fa53c459cdf9d90170478);
+            
+        
+
+        marker_bc3fdb315ae9b4df827d869c39e93292.bindPopup(popup_f675cac3c04926f336111f5a2d054adf)
+        ;
+
+        
+    
+    
+                marker_bc3fdb315ae9b4df827d869c39e93292.setIcon(icon_e33f03c43c1f8bf6de5eecf63ced078c);
+            
+    
+            var marker_ba93b18d14e2cfae244a9f21c1abf675 = L.marker(
+                [29.040289923806444, 77.0668338673259],
+                {
+}
+            ).addTo(marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce);
+        
+    
+            var icon_e239807925fe499888a38b32faaae5a3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0ab8cc253f9a260c8048775bcba4f55a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_51d979f83721a6fa1f5dcee8749a6e8a = $(`<div id="html_51d979f83721a6fa1f5dcee8749a6e8a" style="width: 100.0%; height: 100.0%;"><b>Village:</b> hassanpur<br><b>Sub-District:</b> sonipat<br><b>District:</b> sonipat<br><b>State:</b> haryana<br><b>Score:</b> 3.55</div>`)[0];
+                popup_0ab8cc253f9a260c8048775bcba4f55a.setContent(html_51d979f83721a6fa1f5dcee8749a6e8a);
+            
+        
+
+        marker_ba93b18d14e2cfae244a9f21c1abf675.bindPopup(popup_0ab8cc253f9a260c8048775bcba4f55a)
+        ;
+
+        
+    
+    
+                marker_ba93b18d14e2cfae244a9f21c1abf675.setIcon(icon_e239807925fe499888a38b32faaae5a3);
+            
+    
+            marker_cluster_f215631d1e4338cf87f4cf9f46ffc1ce.addTo(map_099a21e0d317ec5dcf3f43903619735e);
+        
+</script>
+</html>

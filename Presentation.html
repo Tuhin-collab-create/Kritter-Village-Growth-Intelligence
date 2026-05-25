@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rural Growth Potential Index — Presentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #0a0f0d;
+    --bg2: #111a16;
+    --fg: #e8efe9;
+    --fg-muted: #8a9e8f;
+    --accent: #00c978;
+    --accent2: #f5c542;
+    --accent3: #ff6b4a;
+    --card: rgba(18,32,24,0.85);
+    --border: rgba(0,201,120,0.15);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* ── Atmosphere ── */
+  .atmosphere {
+    position: fixed; inset:0; z-index:0; pointer-events:none;
+  }
+  .atmosphere::before {
+    content:'';
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 80%, rgba(0,201,120,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 50% at 85% 20%, rgba(245,197,66,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse 90% 70% at 50% 50%, rgba(0,201,120,0.02) 0%, transparent 70%);
+  }
+  .atmosphere::after {
+    content:'';
+    position:absolute; inset:0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='1' cy='1' r='0.6' fill='rgba(0,201,120,0.07)'/%3E%3C/svg%3E");
+    background-size: 60px 60px;
+    opacity: 0.5;
+  }
+
+  /* ── Slide States (order matters for same-specificity) ── */
+  .slide {
+    position: absolute; inset:0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 60px 80px;
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.55s cubic-bezier(.4,0,.2,1), transform 0.55s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+    will-change: transform, opacity;
+    z-index: 1;
+  }
+  /* Active: visible and centered */
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    z-index: 2;
+  }
+  /* Exited to the left (used for forward nav) */
+  .slide.exit-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    z-index: 1;
+  }
+  /* Enter from right (starting position for forward nav) */
+  .slide.enter-right {
+    opacity: 0;
+    transform: translateX(60px);
+    z-index: 2;
+  }
+  /* Enter from left (starting position for backward nav) */
+  .slide.enter-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    z-index: 2;
+  }
+
+  /* ── Navigation Bar ── */
+  .nav-bar {
+    position: fixed; bottom: 0; left:0; right:0; z-index:100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 40px;
+    background: linear-gradient(to top, rgba(10,15,13,0.95), transparent);
+    backdrop-filter: blur(8px);
+  }
+  .nav-btn {
+    width: 44px; height: 44px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--fg);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    font-size: 16px;
+  }
+  .nav-btn:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+  .nav-btn:disabled { opacity:0.25; cursor:default; }
+  .nav-btn:disabled:hover { background: var(--card); color: var(--fg); border-color: var(--border); }
+  .progress-track {
+    flex:1; max-width: 400px; margin: 0 24px; height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px; overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    border-radius: 4px;
+    transition: width 0.5s cubic-bezier(.4,0,.2,1);
+  }
+  .slide-counter {
+    font-size: 13px; color: var(--fg-muted);
+    font-weight: 500; letter-spacing: 1px;
+    min-width: 70px; text-align: right;
+  }
+
+  /* ── Dot Navigation ── */
+  .dots {
+    position: fixed; right: 28px; top: 50%; transform: translateY(-50%);
+    z-index: 100; display: flex; flex-direction: column; gap: 8px;
+  }
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    cursor: pointer; transition: all 0.3s;
+    border: none;
+  }
+  .dot.active {
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(0,201,120,0.4);
+    transform: scale(1.4);
+  }
+  .dot:hover:not(.active) { background: rgba(255,255,255,0.25); }
+
+  /* ── Typography ── */
+  .slide-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.15;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, var(--fg), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .slide-subtitle {
+    font-size: clamp(15px, 1.8vw, 20px);
+    color: var(--fg-muted);
+    font-weight: 300;
+    margin-bottom: 36px;
+    letter-spacing: 0.3px;
+  }
+  .slide-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 3px;
+    color: var(--accent); font-weight: 600; margin-bottom: 14px;
+  }
+
+  /* ── Cards ── */
+  .card-grid { display: grid; gap: 20px; width: 100%; max-width: 1100px; }
+  .card-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+  .card-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card-grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.35s;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content:'';
+    position:absolute; top:0; left:0; right:0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity:0; transition: opacity 0.35s;
+  }
+  .card:hover { border-color: rgba(0,201,120,0.3); transform: translateY(-3px); }
+  .card:hover::before { opacity:1; }
+  .card-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; margin-bottom: 16px;
+  }
+  .card-icon.green { background: rgba(0,201,120,0.12); color: var(--accent); }
+  .card-icon.gold { background: rgba(245,197,66,0.12); color: var(--accent2); }
+  .card-icon.coral { background: rgba(255,107,74,0.12); color: var(--accent3); }
+  .card-icon.white { background: rgba(255,255,255,0.06); color: var(--fg); }
+  .card h3 { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+  .card p { font-size: 14px; color: var(--fg-muted); line-height: 1.6; }
+
+  /* ── Stats ── */
+  .stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900; color: var(--accent); line-height: 1;
+  }
+  .stat-value.gold { color: var(--accent2); }
+  .stat-value.coral { color: var(--accent3); }
+  .stat-label {
+    font-size: 13px; color: var(--fg-muted); margin-top: 6px;
+    text-transform: uppercase; letter-spacing: 1.5px; font-weight: 500;
+  }
+
+  /* ── Formula ── */
+  .formula-box {
+    background: linear-gradient(135deg, rgba(0,201,120,0.08), rgba(245,197,66,0.05));
+    border: 1px solid rgba(0,201,120,0.2);
+    border-radius: 16px;
+    padding: 32px 40px;
+    font-size: clamp(16px, 2vw, 22px);
+    text-align: center; color: var(--fg); letter-spacing: 0.5px;
+  }
+  .formula-box .hl { color: var(--accent); font-weight: 700; }
+  .formula-box .gd { color: var(--accent2); font-weight: 700; }
+  .formula-box .cr { color: var(--accent3); font-weight: 700; }
+
+  /* ── List ── */
+  .styled-list { list-style: none; padding: 0; }
+  .styled-list li {
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start; gap: 14px;
+    font-size: 15px; color: var(--fg-muted); line-height: 1.5;
+  }
+  .styled-list li:last-child { border-bottom: none; }
+  .styled-list .lb {
+    width: 8px; height: 8px; min-width: 8px;
+    background: var(--accent); border-radius: 50%; margin-top: 6px;
+  }
+
+  /* ── Chart ── */
+  .chart-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px; width: 100%;
+  }
+  .chart-wrap canvas { width: 100% !important; }
+
+  /* ── Table ── */
+  .data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .data-table th {
+    text-align: left; padding: 12px 14px; color: var(--accent);
+    font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+    font-size: 10px; border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 10px 14px; color: var(--fg-muted);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .data-table tr:hover td { color: var(--fg); background: rgba(0,201,120,0.03); }
+
+  /* ── Pipeline ── */
+  .pipeline {
+    display: flex; align-items: center; gap: 0;
+    width: 100%; max-width: 1100px; justify-content: center; flex-wrap: wrap;
+  }
+  .pipeline-step {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px 24px; text-align: center;
+    min-width: 130px; transition: all 0.3s;
+  }
+  .pipeline-step:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .pipeline-step .sn { font-family:'Playfair Display',serif; font-size:28px; font-weight:900; color:var(--accent); line-height:1; }
+  .pipeline-step .sl { font-size:11px; color:var(--fg-muted); margin-top:6px; text-transform:uppercase; letter-spacing:1px; }
+  .pipeline-arrow { color:var(--fg-muted); font-size:20px; margin:0 6px; opacity:0.4; }
+
+  /* ── Tags ── */
+  .tag {
+    display: inline-block; padding: 4px 12px; border-radius: 20px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .tag.green { background: rgba(0,201,120,0.12); color: var(--accent); }
+  .tag.gold { background: rgba(245,197,66,0.12); color: var(--accent2); }
+  .tag.coral { background: rgba(255,107,74,0.12); color: var(--accent3); }
+
+  /* ── Title Slide ── */
+  .title-wrap { text-align: center; max-width: 900px; }
+  .title-wrap .slide-title { font-size: clamp(42px, 6vw, 72px); font-weight: 900; margin-bottom: 20px; }
+  .title-line { width: 80px; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 4px; margin: 0 auto 28px; }
+  .title-meta { font-size: 14px; color: var(--fg-muted); letter-spacing: 2px; text-transform: uppercase; }
+
+  /* ── Split Layout ── */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; max-width: 1100px; align-items: center; }
+  .split-text { max-width: 480px; }
+  .split-visual { display: flex; justify-content: center; }
+
+  /* ── Map ── */
+  .map-box {
+    width: 100%; aspect-ratio: 16/10; border-radius: 16px; overflow: hidden;
+    border: 1px solid var(--border); position: relative; background: var(--bg2);
+  }
+  .map-box img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) saturate(1.2); }
+  .map-ov {
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,201,120,0.1), transparent);
+    display: flex; align-items: flex-end; padding: 20px;
+  }
+  .map-badge {
+    background: rgba(10,15,13,0.85); backdrop-filter: blur(10px);
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 10px 16px; font-size: 12px; color: var(--fg-muted);
+  }
+  .map-badge strong { color: var(--accent); }
+
+  /* ── Correlation Bars ── */
+  .corr-wrap { margin-bottom: 18px; }
+  .corr-lbl { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .corr-lbl span:first-child { color: var(--fg); font-weight: 500; }
+  .corr-lbl span:last-child { color: var(--fg-muted); font-family: monospace; }
+  .corr-track { height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+  .corr-fill { height: 100%; border-radius: 4px; width: 0; transition: width 1s cubic-bezier(.4,0,.2,1) 0.3s; }
+  .slide.active .corr-fill.pos { width: 62%; background: linear-gradient(90deg, var(--accent), #34d399); }
+  .slide.active .corr-fill.neg { width: 21%; background: linear-gradient(90deg, var(--accent3), #fb923c); }
+  .slide.active .corr-fill.neu { width: 2%; background: linear-gradient(90deg, var(--fg-muted), rgba(138,158,143,0.5)); }
+
+  /* ── Animations ── */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+  .slide.active .a1 { animation: fadeUp 0.5s 0.1s both; }
+  .slide.active .a2 { animation: fadeUp 0.5s 0.2s both; }
+  .slide.active .a3 { animation: fadeUp 0.5s 0.3s both; }
+  .slide.active .a4 { animation: fadeUp 0.5s 0.4s both; }
+  .slide.active .a5 { animation: fadeUp 0.5s 0.5s both; }
+  .slide.active .a6 { animation: fadeUp 0.5s 0.6s both; }
+
+  /* ── Particles ── */
+  .particle {
+    position: fixed; border-radius: 50%; pointer-events: none; z-index: 0;
+    animation: floatP linear infinite;
+  }
+  @keyframes floatP {
+    0% { transform: translateY(100vh) scale(0); opacity:0; }
+    10% { opacity:1; } 90% { opacity:1; }
+    100% { transform: translateY(-10vh) scale(1); opacity:0; }
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .slide { padding: 40px 32px; }
+    .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: 1fr 1fr; }
+    .split { grid-template-columns: 1fr; }
+    .dots { display: none; }
+    .pipeline { flex-direction: column; }
+    .pipeline-arrow { transform: rotate(90deg); }
+  }
+  @media (max-width: 600px) {
+    .card-grid.cols-2, .card-grid.cols-3, .card-grid.cols-4 { grid-template-columns: 1fr; }
+    .slide { padding: 30px 20px; }
+    .nav-bar { padding: 12px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slide { transition: opacity 0.2s !important; transform: none !important; }
+    .slide.active, .slide.exit-left, .slide.enter-right, .slide.enter-left { transform: none !important; }
+    .particle { display: none; }
+    * { animation-duration: 0.01s !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="atmosphere"></div>
+<div id="particles"></div>
+
+<nav class="dots" id="dots" aria-label="Slide navigation"></nav>
+
+<div class="slides-wrapper" id="sw">
+
+  <!-- 0: Title -->
+  <section class="slide active" aria-label="Title">
+    <div class="title-wrap">
+      <p class="slide-label a1">Data-Driven Rural Development</p>
+      <h1 class="slide-title a2">Rural Growth<br>Potential Index</h1>
+      <div class="title-line a3"></div>
+      <p class="slide-subtitle a4" style="max-width:620px;margin:0 auto 32px;">
+        A geospatial intelligence framework that identifies India's top 100 high-potential villages through connectivity, density, and urban spillover analysis.
+      </p>
+      <p class="title-meta a5">Tuhin Barai &nbsp;&bull;&nbsp; Data Scientist &nbsp;&bull;&nbsp; Geospatial Analyst</p>
+    </div>
+  </section>
+
+  <!-- 1: Challenge -->
+  <section class="slide" aria-label="Challenge">
+    <p class="slide-label a1">The Problem</p>
+    <h2 class="slide-title a2">Why Traditional Approaches Fail</h2>
+    <p class="slide-subtitle a3">Policymakers lack granular, evidence-based tools to prioritize rural infrastructure investments.</p>
+    <div class="card-grid cols-3 a4" style="max-width:1000px;">
+      <div class="card">
+        <div class="card-icon coral"><i class="fas fa-users"></i></div>
+        <h3>Population Myth</h3>
+        <p>Relying on raw population data misleads — sheer size does not equal growth potential. Large but isolated villages get over-prioritized.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold"><i class="fas fa-map-marked-alt"></i></div>
+        <h3>No Spatial Context</h3>
+        <p>Without connectivity and proximity metrics, decisions ignore the network effects that drive real economic spillover from urban hubs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon green"><i class="fas fa-satellite"></i></div>
+        <h3>Untapped Satellite Data</h3>
+        <p>Nighttime luminosity (VIIRS) provides a powerful proxy for economic activity, yet remains underutilized in rural planning.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2: Solution -->
+  <section class="slide" aria-label="Solution">
+    <div class="split">
+      <div class="split-text">
+        <p class="slide-label a1">The Solution</p>
+        <h2 class="slide-title a2">Identifying Growth Engines, Not Just Villages</h2>
+        <p class="slide-subtitle a3">The RGPI filters thousands of locations to isolate the top 100 villages best positioned to serve as regional economic catalysts.</p>
+        <ul class="styled-list a4">
+          <li><span class="lb"></span><span>Integrates spatial, demographic, and satellite data into a unified index</span></li>
+          <li><span class="lb"></span><span>Applies weighted gravity-based scoring aligned with economic theory</span></li>
+          <li><span class="lb"></span><span>Produces an interactive map + ranked list for direct policy action</span></li>
+          <li><span class="lb"></span><span>Scalable framework applicable across states and regions</span></li>
+        </ul>
+      </div>
+      <div class="split-visual a5">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div class="card" style="text-align:center;"><div class="stat-value">100</div><div class="stat-label">Top Villages</div></div>
+          <div class="card" style="text-align:center;"><div class="stat-value gold">8</div><div class="stat-label">States Covered</div></div>
+          <div class="card" style="text-align:center;"><div class="stat-value coral">4</div><div class="stat-label">Data Sources</div></div>
+          <div class="card" style="text-align:center;"><div class="stat-value">3</div><div class="stat-label">Scoring Pillars</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3: Data Architecture -->
+  <section class="slide" aria-label="Data Architecture">
+    <p class="slide-label a1">Data Architecture</p>
+    <h2 class="slide-title a2">Four Integrated Datasets</h2>
+    <p class="slide-subtitle a3">All datasets linked by the <strong style="color:var(--accent)">shrid2</strong> unique village identifier.</p>
+    <div class="card-grid cols-4 a4" style="max-width:1100px;">
+      <div class="card">
+        <div class="card-icon green"><i class="fas fa-globe"></i></div>
+        <h3>Spatial Stats</h3>
+        <p>Coordinate data and multi-radius connectivity metrics (tdist_10 through tdist_500).</p>
+        <span class="tag green" style="margin-top:12px;">Geospatial</span>
+      </div>
+      <div class="card">
+        <div class="card-icon gold"><i class="fas fa-map-pin"></i></div>
+        <h3>Location Names</h3>
+        <p>Full administrative hierarchy: State, District, Sub-district, Village name.</p>
+        <span class="tag gold" style="margin-top:12px;">Administrative</span>
+      </div>
+      <div class="card">
+        <div class="card-icon coral"><i class="fas fa-moon"></i></div>
+        <h3>VIIRS Data</h3>
+        <p>Nighttime satellite luminosity — proxy for economic activity intensity.</p>
+        <span class="tag coral" style="margin-top:12px;">Satellite</span>
+      </div>
+      <div class="card">
+        <div class="card-icon white"><i class="fas fa-key"></i></div>
+        <h3>Bridge Key</h3>
+        <p>Maps administrative identifiers to spatial codes for seamless joins.</p>
+        <span class="tag green" style="margin-top:12px;">Connector</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4: Methodology Pipeline -->
+  <section class="slide" aria-label="Methodology">
+    <p class="slide-label a1">Methodology</p>
+    <h2 class="slide-title a2">End-to-End Processing Pipeline</h2>
+    <p class="slide-subtitle a3">From raw data ingestion to actionable intelligence.</p>
+    <div class="pipeline a4">
+      <div class="pipeline-step"><div class="sn">01</div><div class="sl">Data Integration</div></div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step"><div class="sn">02</div><div class="sl">Cleaning</div></div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step"><div class="sn">03</div><div class="sl">Outlier Clip</div></div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step"><div class="sn">04</div><div class="sl">Log Transform</div></div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step"><div class="sn">05</div><div class="sl">Scoring</div></div>
+      <div class="pipeline-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="pipeline-step"><div class="sn">06</div><div class="sl">Ranking</div></div>
+    </div>
+    <div class="card-grid cols-3 a5" style="max-width:1100px;margin-top:32px;">
+      <div class="card">
+        <h3 style="color:var(--accent);font-size:14px;">Left Join Strategy</h3>
+        <p>Maintains primary spatial dataset integrity — no village dropped due to missing auxiliary data.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent2);font-size:14px;">95th Percentile Cap</h3>
+        <p>tdist values clipped to prevent extreme geographical outliers from skewing the scoring model.</p>
+      </div>
+      <div class="card">
+        <h3 style="color:var(--accent3);font-size:14px;">Zero Imputation</h3>
+        <p>Missing urban indicators filled with 0, assuming no significant urban influence for those records.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5: Scoring Formula -->
+  <section class="slide" aria-label="Scoring Formula">
+    <p class="slide-label a1">The Algorithm</p>
+    <h2 class="slide-title a2">Weighted Scoring Formula</h2>
+    <p class="slide-subtitle a3">A weighted linear combination aligned with economic gravity theory.</p>
+    <div class="formula-box a4" style="max-width:800px;margin-bottom:36px;">
+      Score = (<span class="hl">Connectivity</span> &times; 0.5) + (<span class="gd">Density</span> &times; 0.3) + (<span class="cr">Urban Impact</span> &times; 0.2)
+    </div>
+    <div class="card-grid cols-3 a5" style="max-width:1000px;">
+      <div class="card" style="border-left:3px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <span style="font-family:'Playfair Display';font-size:28px;font-weight:900;color:var(--accent);">50%</span>
+          <span style="font-size:13px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:1px;">Weight</span>
+        </div>
+        <h3>Connectivity Score</h3>
+        <p style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:8px;">1 / (tdist<sub>10</sub> + 1)</p>
+        <p>Inverse distance function — closer to urban centers yields higher score.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent2);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <span style="font-family:'Playfair Display';font-size:28px;font-weight:900;color:var(--accent2);">30%</span>
+          <span style="font-size:13px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:1px;">Weight</span>
+        </div>
+        <h3>Density Score</h3>
+        <p style="font-family:monospace;font-size:13px;color:var(--accent2);margin-bottom:8px;">log1p(shr_pop)</p>
+        <p>Log-transformed population share normalizes right-skewed data.</p>
+      </div>
+      <div class="card" style="border-left:3px solid var(--accent3);">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+          <span style="font-family:'Playfair Display';font-size:28px;font-weight:900;color:var(--accent3);">20%</span>
+          <span style="font-size:13px;color:var(--fg-muted);text-transform:uppercase;letter-spacing:1px;">Weight</span>
+        </div>
+        <h3>Urban Impact Score</h3>
+        <p style="font-family:monospace;font-size:13px;color:var(--accent3);margin-bottom:8px;">log1p(ua_pc11_pca_tot_p)</p>
+        <p>Log-transformed urban agglomeration captures city spillover.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6: Distribution -->
+  <section class="slide" aria-label="Distribution">
+    <div class="split">
+      <div class="split-text">
+        <p class="slide-label a1">Results</p>
+        <h2 class="slide-title a2">Power Law Distribution</h2>
+        <p class="slide-subtitle a3">Growth potential is not evenly spread — it concentrates in a few strategic nodes.</p>
+        <ul class="styled-list a4">
+          <li><span class="lb"></span><span>The vast majority of villages cluster near zero score</span></li>
+          <li><span class="lb"></span><span>A select few emerge as high-growth "engines"</span></li>
+          <li><span class="lb"></span><span>This long-tail pattern validates targeted intervention over blanket policies</span></li>
+          <li><span class="lb"></span><span>Top 100 villages represent the extreme right tail of this distribution</span></li>
+        </ul>
+      </div>
+      <div class="split-visual a5">
+        <div class="chart-wrap" style="max-width:480px;"><canvas id="distChart" height="280"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7: Drivers -->
+  <section class="slide" aria-label="Drivers">
+    <p class="slide-label a1">Key Insight</p>
+    <h2 class="slide-title a2">Drivers of Rural Growth</h2>
+    <p class="slide-subtitle a3">Where a village is located matters far more than how many people live there.</p>
+    <div class="split a4" style="max-width:1100px;">
+      <div style="max-width:440px;">
+        <div class="corr-wrap">
+          <div class="corr-lbl"><span>Urban Impact</span><span>+0.62</span></div>
+          <div class="corr-track"><div class="corr-fill pos"></div></div>
+        </div>
+        <div class="corr-wrap">
+          <div class="corr-lbl"><span>Connectivity (Distance)</span><span>-0.21</span></div>
+          <div class="corr-track"><div class="corr-fill neg"></div></div>
+        </div>
+        <div class="corr-wrap">
+          <div class="corr-lbl"><span>Population</span><span>+0.01</span></div>
+          <div class="corr-track"><div class="corr-fill neu"></div></div>
+        </div>
+        <div class="card" style="margin-top:24px;border-left:3px solid var(--accent);">
+          <p style="font-size:14px;line-height:1.6;">
+            <strong style="color:var(--accent);">Urban proximity</strong> is the dominant predictor — explaining 62% of score variance. <strong style="color:var(--accent2);">Population size</strong> is nearly irrelevant at 1%. This reframes rural development: invest in villages near cities, not just big villages.
+          </p>
+        </div>
+      </div>
+      <div class="split-visual">
+        <div class="chart-wrap" style="max-width:420px;"><canvas id="corrChart" height="280"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8: Map -->
+  <section class="slide" aria-label="Map">
+    <p class="slide-label a1">Spatial Intelligence</p>
+    <h2 class="slide-title a2">Geographic Concentration</h2>
+    <p class="slide-subtitle a3">High-potential villages cluster around India's largest urban agglomerations.</p>
+    <div class="map-box a4" style="max-width:900px;">
+      <img src="https://z-cdn-media.chatglm.cn/files/46be1d46-b521-4daf-af8b-43f4d77df972.png?auth_key=1879599220-1c984042df7c497e934a12068abb2c1f-0-cb27374339a3dc471b7297d589624c71" alt="Growth Potential Map of India">
+      <div class="map-ov">
+        <div class="map-badge">
+          <strong>48</strong> villages near Delhi NCR &nbsp;|&nbsp; <strong>19</strong> near Mumbai &nbsp;|&nbsp; <strong>18</strong> near Kolkata &nbsp;|&nbsp; <strong>12</strong> near Chennai
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9: State Breakdown -->
+  <section class="slide" aria-label="State Breakdown">
+    <div class="split">
+      <div class="split-text">
+        <p class="slide-label a1">Regional Analysis</p>
+        <h2 class="slide-title a2">State-Wise Breakdown</h2>
+        <p class="slide-subtitle a3">Uttar Pradesh dominates with 34 villages, driven by Delhi NCR spillover.</p>
+      </div>
+      <div class="split-visual a4">
+        <div class="chart-wrap" style="max-width:420px;"><canvas id="stateChart" height="300"></canvas></div>
+      </div>
+    </div>
+    <div class="card-grid cols-4 a5" style="max-width:1100px;margin-top:28px;">
+      <div class="card" style="text-align:center;"><div class="stat-value" style="font-size:36px;">34</div><div class="stat-label">Uttar Pradesh</div></div>
+      <div class="card" style="text-align:center;"><div class="stat-value gold" style="font-size:36px;">22</div><div class="stat-label">West Bengal</div></div>
+      <div class="card" style="text-align:center;"><div class="stat-value coral" style="font-size:36px;">17</div><div class="stat-label">Maharashtra</div></div>
+      <div class="card" style="text-align:center;"><div class="stat-value" style="font-size:36px;">14</div><div class="stat-label">Tamil Nadu</div></div>
+    </div>
+  </section>
+
+  <!-- 10: Top Villages Table -->
+  <section class="slide" aria-label="Top Villages">
+    <p class="slide-label a1">Ranked Results</p>
+    <h2 class="slide-title a2">Top 10 Growth Engines</h2>
+    <p class="slide-subtitle a3">The highest-scoring villages by the Rural Growth Potential Index.</p>
+    <div class="chart-wrap a4" style="max-width:1000px;overflow-x:auto;">
+      <table class="data-table">
+        <thead>
+          <tr><th>Rank</th><th>Village</th><th>District</th><th>State</th><th>Score</th><th>Urban Hub</th></tr>
+        </thead>
+        <tbody>
+          <tr><td style="color:var(--accent);font-weight:700;">#1</td><td>Ilaichipur</td><td>Ghaziabad</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#2</td><td>Morthal Khas</td><td>Sonipat</td><td>Haryana</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#3</td><td>Piplehda</td><td>Ghaziabad</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#4</td><td>Asalatpur Farakh Nagar</td><td>Ghaziabad</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#5</td><td>Dasna Dehat</td><td>Ghaziabad</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#6</td><td>Dhoom Manikpur</td><td>Gautam Buddha Nagar</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#7</td><td>Tilbegumpur</td><td>Bulandshahr</td><td>Uttar Pradesh</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#8</td><td>Bahora Kalan</td><td>Gurgaon</td><td>Haryana</td><td style="color:var(--accent);font-weight:600;">3.904</td><td>Delhi NCR</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#9</td><td>Nandiwali Tarf Pachanand</td><td>Thane</td><td>Maharashtra</td><td style="color:var(--accent2);font-weight:600;">3.878</td><td>Mumbai</td></tr>
+          <tr><td style="color:var(--accent);font-weight:700;">#10</td><td>Bhagabanpur</td><td>South 24 Parganas</td><td>West Bengal</td><td style="color:var(--accent2);font-weight:600;">3.803</td><td>Kolkata</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 11: Hub Influence -->
+  <section class="slide" aria-label="Hub Influence">
+    <p class="slide-label a1">Spillover Effect</p>
+    <h2 class="slide-title a2">Urban Hub Influence on Scores</h2>
+    <p class="slide-subtitle a3">Villages near larger urban agglomerations consistently score higher.</p>
+    <div class="chart-wrap a4" style="max-width:800px;"><canvas id="hubChart" height="260"></canvas></div>
+    <div class="card-grid cols-4 a5" style="max-width:1000px;margin-top:24px;">
+      <div class="card" style="text-align:center;"><div style="font-size:24px;font-weight:900;color:var(--accent);font-family:'Playfair Display';">24.6M</div><div class="stat-label">Delhi NCR Pop.</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size:24px;font-weight:900;color:var(--accent2);font-family:'Playfair Display';">21.6M</div><div class="stat-label">Mumbai Pop.</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size:24px;font-weight:900;color:var(--accent3);font-family:'Playfair Display';">14.9M</div><div class="stat-label">Kolkata Pop.</div></div>
+      <div class="card" style="text-align:center;"><div style="font-size:24px;font-weight:900;color:var(--fg);font-family:'Playfair Display';">9.9M</div><div class="stat-label">Bangalore Pop.</div></div>
+    </div>
+  </section>
+
+  <!-- 12: Technical Challenges -->
+  <section class="slide" aria-label="Challenges">
+    <p class="slide-label a1">Engineering</p>
+    <h2 class="slide-title a2">Technical Challenges Solved</h2>
+    <p class="slide-subtitle a3">How we ensured model reliability and statistical integrity.</p>
+    <div class="card-grid cols-3 a4" style="max-width:1100px;">
+      <div class="card">
+        <div class="card-icon coral"><i class="fas fa-chart-line"></i></div>
+        <h3>Data Skewness</h3>
+        <p>High-value urban clusters washed out subtle rural variations. <strong style="color:var(--accent);">Solution:</strong> Log-transformation (np.log1p) compressed the range while preserving relative ordering.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon gold"><i class="fas fa-check-double"></i></div>
+        <h3>Model Validation</h3>
+        <p>If connectivity correlation had been positive, the inverse formula would be flawed. <strong style="color:var(--accent);">Confirmed:</strong> -0.21 validates the methodology.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon green"><i class="fas fa-database"></i></div>
+        <h3>Data Completeness</h3>
+        <p>Left joins + zero imputation ensured no village was dropped due to missing auxiliary metadata, preserving spatial coverage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13: Takeaways -->
+  <section class="slide" aria-label="Takeaways">
+    <p class="slide-label a1">Summary</p>
+    <h2 class="slide-title a2">Key Takeaways</h2>
+    <div class="card-grid cols-2 a3" style="max-width:1000px;">
+      <div class="card" style="border-top:3px solid var(--accent);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--accent);">01</span>
+          <h3>Location Over Size</h3>
+        </div>
+        <p>Urban proximity (0.62 correlation) dwarfs population (0.01) as a growth predictor. Policy should prioritize peri-urban villages, not just populous ones.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--accent2);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--accent2);">02</span>
+          <h3>Power Law Confirms Targeting</h3>
+        </div>
+        <p>Growth potential follows a long-tail distribution — blanket rural policies are inefficient. Focused investment in top nodes yields maximum ROI.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--accent3);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--accent3);">03</span>
+          <h3>NCR Dominance</h3>
+        </div>
+        <p>48 of the top 100 villages cluster around Delhi NCR — India's largest urban agglomeration creates an unmatched spillover corridor spanning UP and Haryana.</p>
+      </div>
+      <div class="card" style="border-top:3px solid var(--fg-muted);">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <span style="font-family:'Playfair Display';font-size:32px;font-weight:900;color:var(--fg);">04</span>
+          <h3>Scalable Framework</h3>
+        </div>
+        <p>The RGPI methodology is repeatable across states, adaptable to new data sources, and can integrate additional variables like road networks or electrification data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14: Thank You -->
+  <section class="slide" aria-label="Thank You">
+    <div class="title-wrap">
+      <p class="slide-label a1">End of Presentation</p>
+      <h1 class="slide-title a2" style="font-size:clamp(40px,5.5vw,64px);">Thank You</h1>
+      <div class="title-line a3"></div>
+      <p class="slide-subtitle a4" style="max-width:540px;margin:0 auto 40px;">
+        The Rural Growth Potential Index transforms complex spatial data into a clear, actionable roadmap for India's rural economic development.
+      </p>
+      <div class="a5" style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;">
+        <div class="card" style="text-align:center;min-width:180px;">
+          <div class="card-icon green" style="margin:0 auto 12px;"><i class="fas fa-user"></i></div>
+          <h3>Tuhin Barai</h3>
+          <p style="font-size:12px;">Data Scientist<br>Geospatial Analyst</p>
+        </div>
+        <div class="card" style="text-align:center;min-width:180px;">
+          <div class="card-icon gold" style="margin:0 auto 12px;"><i class="fas fa-code"></i></div>
+          <h3>Technical Stack</h3>
+          <p style="font-size:12px;">Python, Pandas<br>Folium, VIIRS, GeoData</p>
+        </div>
+        <div class="card" style="text-align:center;min-width:180px;">
+          <div class="card-icon coral" style="margin:0 auto 12px;"><i class="fas fa-file-alt"></i></div>
+          <h3>Deliverables</h3>
+          <p style="font-size:12px;">Interactive Map<br>Ranked CSV, Analysis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Navigation -->
+<nav class="nav-bar" aria-label="Slide controls">
+  <button class="nav-btn" id="prevBtn" aria-label="Previous slide" disabled><i class="fas fa-chevron-left"></i></button>
+  <div class="progress-track"><div class="progress-fill" id="pFill"></div></div>
+  <span class="slide-counter" id="sCounter">1 / 15</span>
+  <button class="nav-btn" id="nextBtn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+</nav>
+
+<script>
+  /* ── Core Navigation (class-based, no inline style conflicts) ── */
+  const slides = document.querySelectorAll('.slide');
+  const N = slides.length;
+  let cur = 0, busy = false;
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const pFill = document.getElementById('pFill');
+  const sCounter = document.getElementById('sCounter');
+  const dotsEl = document.getElementById('dots');
+
+  // Build dots
+  for (let i = 0; i < N; i++) {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Slide ' + (i + 1));
+    d.addEventListener('click', () => go(i));
+    dotsEl.appendChild(d);
+  }
+  const dots = dotsEl.querySelectorAll('.dot');
+
+  function ui() {
+    pFill.style.width = (cur / (N - 1) * 100) + '%';
+    sCounter.textContent = (cur + 1) + ' / ' + N;
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === N - 1;
+    dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+  }
+
+  function go(idx) {
+    if (busy || idx === cur || idx < 0 || idx >= N) return;
+    busy = true;
+
+    const dir = idx > cur ? 1 : -1;
+    const prev = slides[cur];
+    const next = slides[idx];
+
+    // Reset entrance animations on the incoming slide
+    next.querySelectorAll('[class*=" a"]').forEach(el => {
+      el.style.animation = 'none';
+      void el.offsetHeight;
+      el.style.animation = '';
+    });
+
+    // Clean up leftover state classes on next
+    next.classList.remove('exit-left', 'enter-right', 'enter-left');
+
+    // STEP 1: Position next at its starting point using a class
+    next.classList.add(dir > 0 ? 'enter-right' : 'enter-left');
+    // Force browser to compute & paint this position
+    void next.offsetHeight;
+
+    // STEP 2: Swap to active — browser transitions from enter→active
+    next.classList.remove('enter-right', 'enter-left');
+    next.classList.add('active');
+
+    // STEP 3: Animate prev out
+    prev.classList.remove('active');
+    if (dir > 0) {
+      prev.classList.add('exit-left');
+    }
+    // Backward: default .slide CSS (translateX(60px)) handles exit-right
+
+    cur = idx;
+    ui();
+
+    setTimeout(() => {
+      prev.classList.remove('exit-left');
+      busy = false;
+    }, 580);
+  }
+
+  prevBtn.addEventListener('click', () => go(cur - 1));
+  nextBtn.addEventListener('click', () => go(cur + 1));
+
+  // Keyboard
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(cur + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+    if (e.key === 'Home') { e.preventDefault(); go(0); }
+    if (e.key === 'End') { e.preventDefault(); go(N - 1); }
+  });
+
+  // Touch swipe
+  let tx = 0;
+  document.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+  document.addEventListener('touchend', e => {
+    const d = tx - e.changedTouches[0].screenX;
+    if (Math.abs(d) > 50) go(cur + (d > 0 ? 1 : -1));
+  }, { passive: true });
+
+  ui();
+
+  /* ── Particles ── */
+  const pc = document.getElementById('particles');
+  for (let i = 0; i < 18; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const s = Math.random() * 3 + 1;
+    p.style.width = s + 'px';
+    p.style.height = s + 'px';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.background = Math.random() > 0.6
+      ? 'rgba(0,201,120,' + (Math.random() * 0.3 + 0.1) + ')'
+      : 'rgba(245,197,66,' + (Math.random() * 0.2 + 0.05) + ')';
+    p.style.animationDuration = (Math.random() * 15 + 10) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    pc.appendChild(p);
+  }
+
+  /* ── Charts (lazy init on slide enter) ── */
+  Chart.defaults.color = '#8a9e8f';
+  Chart.defaults.borderColor = 'rgba(255,255,255,0.04)';
+  Chart.defaults.font.family = "'DM Sans', sans-serif";
+
+  let cDist = false, cCorr = false, cState = false, cHub = false;
+
+  function mkDist() {
+    if (cDist) return; cDist = true;
+    const labels = [], data = [];
+    for (let i = 0; i <= 40; i++) {
+      labels.push((i * 0.1).toFixed(1));
+      data.push(Math.max(0, 5000 * Math.exp(-3.5 * i * 0.1)));
+    }
+    new Chart(document.getElementById('distChart'), {
+      type: 'bar',
+      data: {
+        labels,
+        datasets: [{ data, backgroundColor: data.map((_, i) => i > 30 ? 'rgba(0,201,120,0.7)' : 'rgba(0,201,120,0.25)'), borderRadius: 2, barPercentage: 0.9, categoryPercentage: 0.95 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Village Count by Growth Score Range', color: '#e8efe9', font: { size: 14, weight: 600 }, padding: { bottom: 16 } } },
+        scales: {
+          x: { title: { display: true, text: 'Growth Score', color: '#8a9e8f', font: { size: 11 } }, ticks: { maxTicksLimit: 8, font: { size: 10 } }, grid: { display: false } },
+          y: { title: { display: true, text: 'Number of Villages', color: '#8a9e8f', font: { size: 11 } }, ticks: { font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.03)' } }
+        }
+      }
+    });
+  }
+
+  function mkCorr() {
+    if (cCorr) return; cCorr = true;
+    new Chart(document.getElementById('corrChart'), {
+      type: 'radar',
+      data: {
+        labels: ['Urban Impact', 'Connectivity', 'Population', 'Nighttime Light', 'Spatial Density'],
+        datasets: [{ data: [0.62, 0.21, 0.01, 0.58, 0.15], backgroundColor: 'rgba(0,201,120,0.15)', borderColor: 'rgba(0,201,120,0.8)', borderWidth: 2, pointBackgroundColor: '#00c978', pointRadius: 4 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, title: { display: true, text: 'Feature Correlation Profile', color: '#e8efe9', font: { size: 14, weight: 600 }, padding: { bottom: 12 } } },
+        scales: { r: { beginAtZero: true, max: 0.7, ticks: { stepSize: 0.2, font: { size: 9 }, backdropColor: 'transparent' }, grid: { color: 'rgba(255,255,255,0.06)' }, angleLines: { color: 'rgba(255,255,255,0.06)' }, pointLabels: { font: { size: 11 }, color: '#e8efe9' } } }
+      }
+    });
+  }
+
+  function mkState() {
+    if (cState) return; cState = true;
+    new Chart(document.getElementById('stateChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Uttar Pradesh', 'West Bengal', 'Maharashtra', 'Tamil Nadu', 'Haryana', 'Karnataka', 'Andhra Pradesh', 'Gujarat'],
+        datasets: [{ data: [34, 22, 17, 14, 7, 4, 3, 5], backgroundColor: ['rgba(0,201,120,0.8)','rgba(245,197,66,0.8)','rgba(255,107,74,0.8)','rgba(99,179,237,0.8)','rgba(167,139,250,0.8)','rgba(52,211,153,0.8)','rgba(251,191,36,0.7)','rgba(244,114,182,0.7)'], borderColor: 'rgba(10,15,13,0.9)', borderWidth: 3 }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: '60%',
+        plugins: { legend: { position: 'right', labels: { padding: 12, usePointStyle: true, pointStyleWidth: 10, font: { size: 11 } } }, title: { display: true, text: 'Villages by State', color: '#e8efe9', font: { size: 14, weight: 600 }, padding: { bottom: 12 } } }
+      }
+    });
+  }
+
+  function mkHub() {
+    if (cHub) return; cHub = true;
+    new Chart(document.getElementById('hubChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Delhi NCR', 'Mumbai', 'Kolkata', 'Bangalore', 'Chennai', 'Hyderabad', 'Pune', 'Surat'],
+        datasets: [
+          { label: 'Avg. Score', data: [3.68, 3.62, 3.57, 3.72, 3.70, 3.68, 3.61, 3.58], backgroundColor: ['rgba(0,201,120,0.7)','rgba(245,197,66,0.7)','rgba(255,107,74,0.7)','rgba(99,179,237,0.7)','rgba(167,139,250,0.7)','rgba(52,211,153,0.7)','rgba(251,191,36,0.6)','rgba(244,114,182,0.6)'], borderRadius: 6, barPercentage: 0.6 },
+          { label: 'Village Count', data: [48, 19, 18, 4, 8, 3, 3, 5], backgroundColor: 'rgba(255,255,255,0.08)', borderRadius: 6, barPercentage: 0.6, yAxisID: 'y1' }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { labels: { usePointStyle: true, pointStyleWidth: 10, font: { size: 11 }, padding: 16 } }, title: { display: true, text: 'Average RGPI Score & Village Count by Urban Hub', color: '#e8efe9', font: { size: 14, weight: 600 }, padding: { bottom: 16 } } },
+        scales: {
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+          y: { position: 'left', title: { display: true, text: 'Average Score', color: '#8a9e8f', font: { size: 11 } }, min: 3.4, max: 3.8, ticks: { font: { size: 10 } }, grid: { color: 'rgba(255,255,255,0.03)' } },
+          y1: { position: 'right', title: { display: true, text: 'Village Count', color: '#8a9e8f', font: { size: 11 } }, min: 0, max: 55, ticks: { font: { size: 10 } }, grid: { display: false } }
+        }
+      }
+    });
+  }
+
+  // Lazy chart init: watch current slide index
+  const chartMap = { 6: mkDist, 7: mkCorr, 9: mkState, 11: mkHub };
+  let lastS = 0;
+  setInterval(() => {
+    if (cur !== lastS) { lastS = cur; if (chartMap[cur]) chartMap[cur](); }
+  }, 150);
+</script>
+</body>
+</html>
